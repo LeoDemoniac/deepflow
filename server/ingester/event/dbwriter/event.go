@@ -141,6 +141,10 @@ func (e *EventStore) WriteBlock(block *ckdb.Block) {
 	}
 }
 
+func (e *EventStore) OrgID() uint16 {
+	return e.VTAPID%10 + 1
+}
+
 func (e *EventStore) Table() string {
 	if e.HasMetrics {
 		return common.PERF_EVENT.TableName()

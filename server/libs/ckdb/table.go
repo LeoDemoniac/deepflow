@@ -21,6 +21,13 @@ import (
 	"strings"
 )
 
+func OrgDatabasePrefix(orgID uint16) string {
+	if orgID == 0 || orgID == 1 { // 0 is invalid Organization, 1 is default Organization
+		return ""
+	}
+	return fmt.Sprintf("%04d_", orgID)
+}
+
 const (
 	METRICS_DB    = "flow_metrics"
 	LOCAL_SUBFFIX = "_local"
@@ -63,7 +70,11 @@ type Table struct {
 	PrimaryKeyCount int          // 一级索引的key的个数, 从orderKeys中数前n个,
 }
 
-func (t *Table) MakeLocalTableCreateSQL() string {
+func (t *Table) OrgDatabase(orgID uint16) string {
+	return OrgDatabasePrefix(orgID) + t.Database
+}
+
+func (t *Table) makeLocalTableCreateSQL(database string) string {
 	columns := []string{}
 	for _, c := range t.Columns {
 		comment := ""
@@ -115,7 +126,7 @@ ORDER BY (%s)
 %s
 %s
 SETTINGS storage_policy = '%s'`,
-		t.Database, fmt.Sprintf("`%s`", t.LocalName),
+		database, fmt.Sprintf("`%s`", t.LocalName),
 		strings.Join(columns, ",\n"),
 		engine,
 		strings.Join(t.OrderKeys[:t.PrimaryKeyCount], ","),
@@ -126,13 +137,29 @@ SETTINGS storage_policy = '%s'`,
 	return createTable
 }
 
-func (t *Table) MakeGlobalTableCreateSQL() string {
-	engine := fmt.Sprintf(Distributed.String(), t.Cluster, t.Database, t.LocalName)
-	return fmt.Sprintf("CREATE TABLE IF NOT EXISTS %s.`%s` AS %s.`%s` ENGINE=%s",
-		t.Database, t.GlobalName, t.Database, t.LocalName, engine)
+func (t *Table) MakeLocalTableCreateSQL() string {
+	return t.makeLocalTableCreateSQL(t.Database)
 }
 
-func (t *Table) MakePrepareTableInsertSQL() string {
+func (t *Table) MakeOrgLocalTableCreateSQL(orgID uint16) string {
+	return t.makeLocalTableCreateSQL(t.OrgDatabase(orgID))
+}
+
+func (t *Table) makeGlobalTableCreateSQL(database string) string {
+	engine := fmt.Sprintf(Distributed.String(), t.Cluster, t.Database, t.LocalName)
+	return fmt.Sprintf("CREATE TABLE IF NOT EXISTS %s.`%s` AS %s.`%s` ENGINE=%s",
+		database, t.GlobalName, t.Database, t.LocalName, engine)
+}
+
+func (t *Table) MakeGlobalTableCreateSQL() string {
+	return t.makeGlobalTableCreateSQL(t.Database)
+}
+
+func (t *Table) MakeOrgGlobalTableCreateSQL(orgID uint16) string {
+	return t.makeGlobalTableCreateSQL(t.OrgDatabase(orgID))
+}
+
+func (t *Table) makePrepareTableInsertSQL(database string) string {
 	columns := []string{}
 	values := []string{}
 	for _, c := range t.Columns {
@@ -141,9 +168,17 @@ func (t *Table) MakePrepareTableInsertSQL() string {
 	}
 
 	prepare := fmt.Sprintf("INSERT INTO %s.`%s` (%s) VALUES (%s)",
-		t.Database, t.LocalName,
+		database, t.LocalName,
 		strings.Join(columns, ","),
 		strings.Join(values, ","))
 
 	return prepare
+}
+
+func (t *Table) MakePrepareTableInsertSQL() string {
+	return t.makePrepareTableInsertSQL(t.Database)
+}
+
+func (t *Table) MakeOrgPrepareTableInsertSQL(orgID uint16) string {
+	return t.makePrepareTableInsertSQL(t.OrgDatabase(orgID))
 }

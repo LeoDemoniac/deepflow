@@ -24,7 +24,7 @@ import (
 	"github.com/deepflowio/deepflow/server/ingester/flow_tag"
 	"github.com/deepflowio/deepflow/server/libs/ckdb"
 	"github.com/deepflowio/deepflow/server/libs/datatype/prompb"
-	"github.com/deepflowio/deepflow/server/libs/flow-metrics"
+	flow_metrics "github.com/deepflowio/deepflow/server/libs/flow-metrics"
 	"github.com/deepflowio/deepflow/server/libs/pool"
 	"github.com/prometheus/common/model"
 )
@@ -38,6 +38,7 @@ type PrometheusSampleInterface interface {
 	DatabaseName() string
 	TableName() string
 	WriteBlock(*ckdb.Block)
+	OrgID() uint16
 	Columns(int) []*ckdb.Column
 	AppLabelLen() int
 	GenCKTable(string, string, int, *ckdb.ColdStorage, int) *ckdb.Table
@@ -54,6 +55,7 @@ type PrometheusSample struct {
 
 type PrometheusSampleMini struct {
 	Timestamp        uint32 // s
+	VtapId           uint16
 	MetricID         uint32
 	TargetID         uint32
 	AppLabelValueIDs []uint32
@@ -92,6 +94,10 @@ func (m *PrometheusSampleMini) WriteBlock(block *ckdb.Block) {
 		block.Write(v)
 	}
 	block.Write(m.Value)
+}
+
+func (m *PrometheusSampleMini) OrgID() uint16 {
+	return m.VtapId%10 + 1
 }
 
 // Note: The order of append() must be consistent with the order of Write() in WriteBlock.
@@ -144,6 +150,7 @@ func (m *PrometheusSampleMini) GenerateNewFlowTags(cache *flow_tag.FlowTagCache,
 		TableId:   m.MetricID,
 		VpcId:     m.VpcId(),
 		PodNsId:   m.PodNsId(),
+		VtapId:    m.VtapId,
 	}
 	cache.Fields = cache.Fields[:0]
 	cache.FieldValues = cache.FieldValues[:0]
@@ -227,6 +234,10 @@ func (m *PrometheusSample) TableName() string {
 func (m *PrometheusSample) WriteBlock(block *ckdb.Block) {
 	m.PrometheusSampleMini.WriteBlock(block)
 	m.UniversalTag.WriteBlock(block)
+}
+
+func (m *PrometheusSample) OrgID() uint16 {
+	return m.UniversalTag.VTAPID%10 + 1
 }
 
 // Note: The order of append() must be consistent with the order of Write() in WriteBlock.

@@ -65,6 +65,10 @@ func (s *PcapStore) WriteBlock(block *ckdb.Block) {
 		s.AclGids)
 }
 
+func (s *PcapStore) OrgID() uint16 {
+	return s.VtapID%10 + 1
+}
+
 func (p *PcapStore) Release() {
 	ReleasePcapStore(p)
 }

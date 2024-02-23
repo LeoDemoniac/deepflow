@@ -50,6 +50,7 @@ type Field struct {
 
 type DFStats struct {
 	Time      uint32
+	VtapID    uint16
 	TableName string
 	Tags      []Tag
 	Fields    []Field
@@ -118,6 +119,10 @@ func (s *DFStats) WriteBlock(block *ckdb.Block) error {
 		}
 	}
 	return nil
+}
+
+func (s *DFStats) OrgID() uint16 {
+	return s.VtapID%10 + 1
 }
 
 func (s *DFStats) Release() {

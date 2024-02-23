@@ -58,6 +58,10 @@ func (s *L4Packet) WriteBlock(block *ckdb.Block) {
 	block.Write(utils.String(s.PacketBatch))
 }
 
+func (s *L4Packet) OrgID() uint16 {
+	return s.VtapID%10 + 1
+}
+
 func (p *L4Packet) Release() {
 	ReleaseL4Packet(p)
 }

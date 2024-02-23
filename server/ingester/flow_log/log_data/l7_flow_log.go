@@ -338,6 +338,10 @@ func (h *L7FlowLog) WriteBlock(block *ckdb.Block) {
 	)
 }
 
+func (h *L7FlowLog) OrgID() uint16 {
+	return h.VtapID%10 + 1
+}
+
 func base64ToHexString(str string) string {
 	if len(str) < 2 || str[len(str)-1] != '=' {
 		return str

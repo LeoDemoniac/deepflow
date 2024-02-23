@@ -231,6 +231,10 @@ func (p *InProcessProfile) WriteBlock(block *ckdb.Block) {
 	)
 }
 
+func (p *InProcessProfile) OrgID() uint16 {
+	return p.VtapID%10 + 1
+}
+
 var poolInProcess = pool.NewLockFreePool(func() interface{} {
 	return new(InProcessProfile)
 })

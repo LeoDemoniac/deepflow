@@ -148,7 +148,7 @@ func (w *PrometheusWriter) getOrCreateCkwriter(s PrometheusSampleInterface) (*ck
 	ckwriter, err := ckwriter.NewCKWriter(
 		w.ckdbAddrs, w.ckdbUsername, w.ckdbPassword,
 		fmt.Sprintf("%s-%s-%d-%d", w.name, s.TableName(), w.decoderIndex, appLabelCount), w.ckdbTimeZone,
-		table, w.writerConfig.QueueCount, w.writerConfig.QueueSize, w.writerConfig.BatchSize, w.writerConfig.FlushTimeout)
+		table, w.writerConfig.QueueCount, w.writerConfig.QueueSize, w.writerConfig.BatchSize, w.writerConfig.FlushTimeout, w.ckdbWatcher)
 	if err != nil {
 		return nil, err
 	}
@@ -171,11 +171,7 @@ func (w *PrometheusWriter) getOrCreateCkwriter(s PrometheusSampleInterface) (*ck
 		if err := w.addAppLabelColumns(w.ckdbConn, startIndex, endIndex); err != nil {
 			return nil, err
 		}
-
 		// 需要在cluseter其他节点也增加列
-		if err := w.createTableOnCluster(table); err != nil {
-			log.Warningf("other node failed when create table: %s", err)
-		}
 		if err := w.addAppLabelColumnsOnCluster(startIndex, endIndex); err != nil {
 			log.Warningf("other node failed when add app_value_id columns which index from %d to %d: %s", startIndex, endIndex, err)
 		}
@@ -186,26 +182,6 @@ func (w *PrometheusWriter) getOrCreateCkwriter(s PrometheusSampleInterface) (*ck
 	log.Infof("finish create new ckwriter for prometheus, app label count: %d, cost time: %s", appLabelCount, time.Since(startTime))
 
 	return ckwriter, nil
-}
-
-func (w *PrometheusWriter) createTableOnCluster(table *ckdb.Table) error {
-	// in standalone mode, ckdbWatcher will be nil
-	if w.ckdbWatcher == nil {
-		return nil
-	}
-	endpoints, err := w.ckdbWatcher.GetClickhouseEndpointsWithoutMyself()
-	if err != nil {
-		return err
-	}
-	for _, endpoint := range endpoints {
-		err := ckwriter.InitTable(fmt.Sprintf("%s:%d", endpoint.Host, endpoint.Port), w.ckdbUsername, w.ckdbPassword, w.ckdbTimeZone, table)
-		if err != nil {
-			log.Warningf("node %s:%d init table failed. err: %s", endpoint.Host, endpoint.Port, err)
-		} else {
-			log.Infof("node %s:%d init table %s success", endpoint.Host, endpoint.Port, table.LocalName)
-		}
-	}
-	return nil
 }
 
 func (w *PrometheusWriter) addAppLabelColumnsOnCluster(startIndex, endIndex int) error {

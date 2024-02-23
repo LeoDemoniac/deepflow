@@ -20,7 +20,7 @@ import (
 	"github.com/deepflowio/deepflow/server/ingester/flow_tag"
 	"github.com/deepflowio/deepflow/server/libs/ckdb"
 	"github.com/deepflowio/deepflow/server/libs/datatype"
-	"github.com/deepflowio/deepflow/server/libs/flow-metrics"
+	flow_metrics "github.com/deepflowio/deepflow/server/libs/flow-metrics"
 	"github.com/deepflowio/deepflow/server/libs/pool"
 )
 
@@ -78,6 +78,10 @@ func (m *ExtMetrics) WriteBlock(block *ckdb.Block) {
 		m.MetricsFloatNames,
 		m.MetricsFloatValues,
 	)
+}
+
+func (m *ExtMetrics) OrgID() uint16 {
+	return m.UniversalTag.VTAPID%10 + 1
 }
 
 // Note: The order of append() must be consistent with the order of Write() in WriteBlock.
@@ -146,6 +150,7 @@ func (m *ExtMetrics) GenerateNewFlowTags(cache *flow_tag.FlowTagCache) {
 		Table:   tableName,
 		VpcId:   m.UniversalTag.L3EpcID,
 		PodNsId: m.UniversalTag.PodNSID,
+		VtapId:  m.UniversalTag.VTAPID,
 	}
 	cache.Fields = cache.Fields[:0]
 	cache.FieldValues = cache.FieldValues[:0]

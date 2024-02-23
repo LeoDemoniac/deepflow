@@ -68,6 +68,7 @@ type FlowTagInfo struct {
 	Table      string // Represents virtual_table_name in ext_metrics
 	FieldName  string
 	FieldValue string
+	VtapId     uint16
 
 	// IDs only for prometheus
 	TableId      uint32
@@ -104,6 +105,10 @@ func (t *FlowTag) WriteBlock(block *ckdb.Block) {
 	if t.TagType == TagFieldValue {
 		block.Write(t.FieldValue, uint64(1)) // count is 1
 	}
+}
+
+func (t *FlowTag) OrgID() uint16 {
+	return t.VtapId%10 + 1
 }
 
 func (t *FlowTag) Columns() []*ckdb.Column {

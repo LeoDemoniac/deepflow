@@ -859,9 +859,10 @@ func getColumnRenames(columnRenamess []*ColumnRenames) []*ColumnRename {
 	return renames
 }
 
-func (i *Issu) renameColumns(connect *sql.DB) ([]*ColumnRename, error) {
+func (i *Issu) renameColumns(connect *sql.DB, orgID uint16) ([]*ColumnRename, error) {
 	dones := []*ColumnRename{}
 	for _, renameColumn := range i.columnRenames {
+		renameColumn.Db = getOrgDatabase(renameColumn.Db, orgID)
 		version, err := i.getTableVersion(connect, renameColumn.Db, renameColumn.Table)
 		if err != nil {
 			if strings.Contains(err.Error(), "doesn't exist") {
@@ -883,9 +884,10 @@ func (i *Issu) renameColumns(connect *sql.DB) ([]*ColumnRename, error) {
 	return dones, nil
 }
 
-func (i *Issu) modColumns(connect *sql.DB) ([]*ColumnMod, error) {
+func (i *Issu) modColumns(connect *sql.DB, orgID uint16) ([]*ColumnMod, error) {
 	dones := []*ColumnMod{}
 	for _, modColumn := range i.columnMods {
+		modColumn.Db = getOrgDatabase(modColumn.Db, orgID)
 		version, err := i.getTableVersion(connect, modColumn.Db, modColumn.Table)
 		if err != nil {
 			return dones, err
@@ -902,9 +904,10 @@ func (i *Issu) modColumns(connect *sql.DB) ([]*ColumnMod, error) {
 	return dones, nil
 }
 
-func (i *Issu) dropColumns(connect *sql.DB) ([]*ColumnDrop, error) {
+func (i *Issu) dropColumns(connect *sql.DB, orgID uint16) ([]*ColumnDrop, error) {
 	dones := []*ColumnDrop{}
 	for _, dropColumn := range i.columnDrops {
+		dropColumn.Db = getOrgDatabase(dropColumn.Db, orgID)
 		version, err := i.getTableVersion(connect, dropColumn.Db, dropColumn.Table)
 		if err != nil {
 			return dones, err
@@ -920,8 +923,9 @@ func (i *Issu) dropColumns(connect *sql.DB) ([]*ColumnDrop, error) {
 	return dones, nil
 }
 
-func (i *Issu) modTableTTLs(connect *sql.DB) error {
+func (i *Issu) modTableTTLs(connect *sql.DB, orgID uint16) error {
 	for _, modTTL := range i.modTTLs {
+		modTTL.Db = getOrgDatabase(modTTL.Db, orgID)
 		version, err := i.getTableVersion(connect, modTTL.Db, modTTL.Table)
 		if err != nil {
 			log.Error(err)
@@ -1012,9 +1016,10 @@ func getColumnDatasourceAdds(columnDatasourceAddss []*ColumnDatasourceAdds) []*C
 	return adds
 }
 
-func (i *Issu) addColumns(connect *sql.DB) ([]*ColumnAdd, error) {
+func (i *Issu) addColumns(connect *sql.DB, orgID uint16) ([]*ColumnAdd, error) {
 	dones := []*ColumnAdd{}
 	for _, add := range i.columnAdds {
+		add.Db = getOrgDatabase(add.Db, orgID)
 		version, err := i.getTableVersion(connect, add.Db, add.Table)
 		if err != nil {
 			return dones, err
@@ -1032,7 +1037,7 @@ func (i *Issu) addColumns(connect *sql.DB) ([]*ColumnAdd, error) {
 	for _, tableName := range []string{
 		flow_metrics.NETWORK_1M.TableName(), flow_metrics.NETWORK_MAP_1M.TableName(),
 		flow_metrics.APPLICATION_1M.TableName(), flow_metrics.APPLICATION_MAP_1M.TableName()} {
-		datasourceInfos, err := i.getUserDefinedDatasourceInfos(connect, ckdb.METRICS_DB, strings.Split(tableName, ".")[0])
+		datasourceInfos, err := i.getUserDefinedDatasourceInfos(connect, getOrgDatabase(ckdb.METRICS_DB, orgID), strings.Split(tableName, ".")[0])
 		if err != nil {
 			log.Warning(err)
 			continue
@@ -1049,9 +1054,10 @@ func (i *Issu) addColumns(connect *sql.DB) ([]*ColumnAdd, error) {
 	return dones, nil
 }
 
-func (i *Issu) addIndexs(connect *sql.DB) ([]*IndexAdd, error) {
+func (i *Issu) addIndexs(connect *sql.DB, orgID uint16) ([]*IndexAdd, error) {
 	dones := []*IndexAdd{}
 	for _, add := range i.indexAdds {
+		add.Db = getOrgDatabase(add.Db, orgID)
 		version, err := i.getTableVersion(connect, add.Db, add.Table)
 		if err != nil {
 			return dones, err
@@ -1069,32 +1075,49 @@ func (i *Issu) addIndexs(connect *sql.DB) ([]*IndexAdd, error) {
 	return dones, nil
 }
 
-func (i *Issu) Start() error {
+func isNumeric(s string) bool {
+	for _, ch := range s {
+		if ch < '0' || ch > '9' {
+			return false
+		}
+	}
+	return true
+}
+
+func getOrgDatabase(db string, orgID uint16) string {
+	if len(db) > 5 && db[4] == '_' && isNumeric(db[:4]) {
+		return ckdb.OrgDatabasePrefix(orgID) + db[5:]
+	}
+	return ckdb.OrgDatabasePrefix(orgID) + db
+}
+
+func (i *Issu) startOrg(orgID uint16) error {
 	connects := i.Connections
 	if len(connects) == 0 {
 		return fmt.Errorf("connections is nil")
 	}
+
 	for _, connect := range connects {
-		renames, errRenames := i.renameColumns(connect)
+		renames, errRenames := i.renameColumns(connect, orgID)
 		if errRenames != nil {
 			return errRenames
 		}
-		mods, errMods := i.modColumns(connect)
+		mods, errMods := i.modColumns(connect, orgID)
 		if errMods != nil {
 			return errMods
 		}
 
-		adds, errAdds := i.addColumns(connect)
+		adds, errAdds := i.addColumns(connect, orgID)
 		if errAdds != nil {
 			return errAdds
 		}
 
-		addIndexs, errAddIndexs := i.addIndexs(connect)
+		addIndexs, errAddIndexs := i.addIndexs(connect, orgID)
 		if errAddIndexs != nil {
 			log.Warning(errAddIndexs)
 		}
 
-		drops, errDrops := i.dropColumns(connect)
+		drops, errDrops := i.dropColumns(connect, orgID)
 		if errDrops != nil {
 			return errDrops
 		}
@@ -1124,7 +1147,19 @@ func (i *Issu) Start() error {
 				return err
 			}
 		}
-		go i.modTableTTLs(connect)
+		go i.modTableTTLs(connect, orgID)
+	}
+	return nil
+}
+
+func (i *Issu) Start() error {
+	// get OrgIDs
+	orgIDs := []uint16{1, 2}
+	for _, orgID := range orgIDs {
+		err := i.startOrg(orgID)
+		if err != nil {
+			log.Errorf("orgID %d run issu failed, err: %s", orgID, err)
+		}
 	}
 	return nil
 }

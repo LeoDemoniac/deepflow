@@ -30,7 +30,7 @@ import (
 	"github.com/deepflowio/deepflow/server/libs/ckdb"
 	"github.com/deepflowio/deepflow/server/libs/datatype"
 	"github.com/deepflowio/deepflow/server/libs/datatype/pb"
-	"github.com/deepflowio/deepflow/server/libs/flow-metrics"
+	flow_metrics "github.com/deepflowio/deepflow/server/libs/flow-metrics"
 	"github.com/deepflowio/deepflow/server/libs/grpc"
 	"github.com/deepflowio/deepflow/server/libs/pool"
 	"github.com/deepflowio/deepflow/server/libs/utils"
@@ -998,6 +998,10 @@ func (f *L4FlowLog) WriteBlock(block *ckdb.Block) {
 	f.Internet.WriteBlock(block)
 	f.FlowInfo.WriteBlock(block)
 	f.Metrics.WriteBlock(block)
+}
+
+func (f *L4FlowLog) OrgID() uint16 {
+	return f.VtapID%10 + 1
 }
 
 func (f *L4FlowLog) EndTime() time.Duration {
