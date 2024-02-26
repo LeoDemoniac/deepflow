@@ -63,6 +63,14 @@ func (c *SubscriberManager) Start() {
 func (c *SubscriberManager) getSubscribers() []Subscriber {
 	subscribers := []Subscriber{
 		NewChAZ(c.domainLcuuidToIconID, c.resourceTypeToIconID),
+		NewChOSAppTag(),
+		NewChOSAppTags(),
+		NewChPodK8sLabel(),
+		NewChPodK8sLabels(),
+		NewChPodK8sAnnotation(),
+		NewChPodK8sAnnotations(),
+		NewChPodK8sEnv(),
+		NewChPodK8sEnvs(),
 		NewChChostCloudTag(),
 		NewChChostCloudTags(),
 	}
