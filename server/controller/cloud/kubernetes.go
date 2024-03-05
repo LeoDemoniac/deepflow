@@ -17,9 +17,12 @@
 package cloud
 
 import (
+	"time"
+
+	uuid "github.com/satori/go.uuid"
+
 	"github.com/deepflowio/deepflow/server/controller/cloud/model"
 	"github.com/deepflowio/deepflow/server/controller/common"
-	uuid "github.com/satori/go.uuid"
 )
 
 // Kubernetes平台直接使用对应kubernetesgather的resource作为cloud的resource
@@ -104,8 +107,16 @@ func (c *Cloud) getKubernetesData() (model.Resource, float64) {
 		})
 	}
 
+	if len(vms) == 0 {
+		return model.Resource{
+			ErrorState:   kubernetesGatherResource.ErrorState,
+			ErrorMessage: "invalid vm count (0). " + kubernetesGatherResource.ErrorMessage,
+		}, 0
+	}
+
 	return model.Resource{
 		Verified:               true,
+		SyncAt:                 time.Now(),
 		AZs:                    []model.AZ{kubernetesGatherResource.AZ},
 		VPCs:                   []model.VPC{kubernetesGatherResource.VPC},
 		PodClusters:            []model.PodCluster{kubernetesGatherResource.PodCluster},
