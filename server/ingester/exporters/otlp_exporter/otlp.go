@@ -32,8 +32,8 @@ import (
 	"github.com/google/gopacket/layers"
 
 	"github.com/deepflowio/deepflow/server/ingester/common"
-	"github.com/deepflowio/deepflow/server/ingester/flow_log/exporters/config"
-	utag "github.com/deepflowio/deepflow/server/ingester/flow_log/exporters/universal_tag"
+	"github.com/deepflowio/deepflow/server/ingester/exporters/config"
+	utag "github.com/deepflowio/deepflow/server/ingester/exporters/universal_tag"
 	"github.com/deepflowio/deepflow/server/ingester/flow_log/log_data"
 	"github.com/deepflowio/deepflow/server/libs/datatype"
 	"github.com/deepflowio/deepflow/server/libs/utils"

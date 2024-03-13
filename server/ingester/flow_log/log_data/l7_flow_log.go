@@ -735,3 +735,7 @@ func (h *L7FlowLog) GenerateNewFlowTags(cache *flow_tag.FlowTagCache) {
 
 	}
 }
+
+func (h *L7FlowLog) Encode(protocol string) interface{} {
+	return nil
+}
