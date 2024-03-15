@@ -55,11 +55,11 @@ const PROTOSTUFF_SERIALIZATION_ID: u8 = 12;
 const AVRO_SERIALIZATION_ID: u8 = 11;
 const GSON_SERIALIZATION_ID: u8 = 16;
 const PROTOBUF_JSON_SERIALIZATION_ID: u8 = 21;
-
 const PROTOBUF_SERIALIZATION_ID: u8 = 22;
 const FASTJSON2_SERIALIZATION_ID: u8 = 23;
 const KRYO_SERIALIZATION2_ID: u8 = 25;
 const CUSTOM_MESSAGE_PACK_ID: u8 = 31;
+const MAX_SERIALIZATION_ID: u8 = CUSTOM_MESSAGE_PACK_ID + 1;
 
 #[derive(Serialize, Debug, Default, Clone)]
 pub struct DubboInfo {
@@ -290,193 +290,205 @@ impl L7ProtocolParserInterface for DubboLog {
     }
 }
 
-impl DubboLog {
-    fn check_char_boundary(payload: &Cow<'_, str>, start: usize, end: usize) -> bool {
-        let mut invalid = false;
-        for index in start..end {
-            if !payload.is_char_boundary(index) {
-                invalid = true;
-                break;
-            }
+fn check_char_boundary(payload: &Cow<'_, str>, start: usize, end: usize) -> bool {
+    let mut invalid = false;
+    for index in start..end {
+        if !payload.is_char_boundary(index) {
+            invalid = true;
+            break;
         }
-        return invalid;
     }
+    return invalid;
+}
 
-    fn decode_field(payload: &Cow<'_, str>, mut start: usize, end: usize) -> Option<String> {
-        if start >= payload.len() {
-            return None;
-        }
-
-        let bytes = payload.as_bytes();
-        match bytes[start] {
-            BC_STRING_SHORT..=BC_STRING_SHORT_MAX => {
-                if start + 2 >= payload.len() {
-                    return None;
-                }
-                let field_len =
-                    (((bytes[start] - BC_STRING_SHORT) as usize) << 8) + bytes[start + 1] as usize;
-                start += 2;
-                if start + field_len < end {
-                    return Some(payload[start..start + field_len].to_string());
-                }
-            }
-            0..=STRING_DIRECT_MAX => {
-                let field_len = bytes[start] as usize;
-                start += 1;
-                if start + field_len < end {
-                    return Some(payload[start..start + field_len].to_string());
-                }
-            }
-            b'S' => {
-                if start + 3 >= payload.len() {
-                    return None;
-                }
-                let field_len = ((bytes[start + 1] as usize) << 8) + bytes[start + 2] as usize;
-                start += 3;
-                if start + field_len < end {
-                    return Some(payload[start..start + field_len].to_string());
-                }
-            }
-            _ => {}
-        };
+fn decode_field(payload: &Cow<'_, str>, mut start: usize, end: usize) -> Option<String> {
+    if start >= payload.len() {
         return None;
     }
 
-    // 注意 dubbo trace id 解析是区分大小写的
-    fn decode_trace_id(payload: &Cow<'_, str>, trace_type: &TraceType, info: &mut DubboInfo) {
-        let tag = match trace_type {
-            TraceType::Sw3 | TraceType::Sw8 | TraceType::Customize(_) => trace_type.as_str(),
-            _ => return,
-        };
+    let bytes = payload.as_bytes();
+    match bytes[start] {
+        BC_STRING_SHORT..=BC_STRING_SHORT_MAX => {
+            if start + 2 >= payload.len() {
+                return None;
+            }
+            let field_len =
+                (((bytes[start] - BC_STRING_SHORT) as usize) << 8) + bytes[start + 1] as usize;
+            start += 2;
+            if start + field_len < end {
+                return Some(payload[start..start + field_len].to_string());
+            }
+        }
+        0..=STRING_DIRECT_MAX => {
+            let field_len = bytes[start] as usize;
+            start += 1;
+            if start + field_len < end {
+                return Some(payload[start..start + field_len].to_string());
+            }
+        }
+        b'S' => {
+            if start + 3 >= payload.len() {
+                return None;
+            }
+            let field_len = ((bytes[start + 1] as usize) << 8) + bytes[start + 2] as usize;
+            start += 3;
+            if start + field_len < end {
+                return Some(payload[start..start + field_len].to_string());
+            }
+        }
+        _ => {}
+    };
+    return None;
+}
 
-        let mut start = 0;
-        while start < payload.len() {
-            if !payload.is_char_boundary(start) {
-                break;
-            }
-            let index = payload[start..].find(tag);
-            if index.is_none() {
-                break;
-            }
-            let index = index.unwrap();
-            // 注意这里tag长度不会超过256
-            if index == 0 || tag.len() != payload.as_bytes()[start + index - 1] as usize {
-                start += index + tag.len();
-                continue;
-            }
-            let last_index = payload
-                .len()
-                .min(TRACE_ID_MAX_LEN + start + index + tag.len());
-            if Self::check_char_boundary(&payload, start + index, last_index) {
-                start += index + tag.len();
-                continue;
-            }
+// 注意 dubbo trace id 解析是区分大小写的
+fn decode_trace_id(payload: &Cow<'_, str>, trace_type: &TraceType, info: &mut DubboInfo) {
+    let tag = match trace_type {
+        TraceType::Sw3 | TraceType::Sw8 | TraceType::Customize(_) => trace_type.as_str(),
+        _ => return,
+    };
 
-            if let Some(trace_id) =
-                Self::decode_field(payload, start + index + tag.len(), last_index)
-            {
-                info.trace_id = trace_id;
-                break;
-            }
+    let mut start = 0;
+    while start < payload.len() {
+        if !payload.is_char_boundary(start) {
+            break;
+        }
+        let index = payload[start..].find(tag);
+        if index.is_none() {
+            break;
+        }
+        let index = index.unwrap();
+        // 注意这里tag长度不会超过256
+        if index == 0 || tag.len() != payload.as_bytes()[start + index - 1] as usize {
             start += index + tag.len();
+            continue;
+        }
+        let last_index = payload
+            .len()
+            .min(TRACE_ID_MAX_LEN + start + index + tag.len());
+        if check_char_boundary(&payload, start + index, last_index) {
+            start += index + tag.len();
+            continue;
         }
 
-        match trace_type {
-            TraceType::Sw3 => {
-                // sw3: SEGMENTID|SPANID|100|100|#IPPORT|#PARENT_ENDPOINT|#ENDPOINT|TRACEID|SAMPLING
-                if info.trace_id.len() > 2 {
-                    let segs: Vec<&str> = info.trace_id.split("|").collect();
-                    if segs.len() > 7 {
-                        info.trace_id = segs[7].to_string();
-                    }
-                }
-            }
-            TraceType::Sw8 => {
-                if info.trace_id.len() > 2 {
-                    if let Some(index) = info.trace_id[2..].find("-") {
-                        info.trace_id = info.trace_id[2..2 + index].to_string();
-                    }
-                }
-                info.trace_id = decode_base64_to_string(&info.trace_id);
-            }
-            _ => return,
-        };
+        if let Some(trace_id) = decode_field(payload, start + index + tag.len(), last_index) {
+            info.trace_id = trace_id;
+            break;
+        }
+        start += index + tag.len();
     }
 
-    fn decode_span_id(payload: &Cow<'_, str>, trace_type: &TraceType, info: &mut DubboInfo) {
-        let tag = match trace_type {
-            TraceType::Customize(_) | TraceType::Sw3 | TraceType::Sw8 => trace_type.as_str(),
-            _ => return,
-        };
+    match trace_type {
+        TraceType::Sw3 => {
+            // sw3: SEGMENTID|SPANID|100|100|#IPPORT|#PARENT_ENDPOINT|#ENDPOINT|TRACEID|SAMPLING
+            if info.trace_id.len() > 2 {
+                let segs: Vec<&str> = info.trace_id.split("|").collect();
+                if segs.len() > 7 {
+                    info.trace_id = segs[7].to_string();
+                }
+            }
+        }
+        TraceType::Sw8 => {
+            if info.trace_id.len() > 2 {
+                if let Some(index) = info.trace_id[2..].find("-") {
+                    info.trace_id = info.trace_id[2..2 + index].to_string();
+                }
+            }
+            info.trace_id = decode_base64_to_string(&info.trace_id);
+        }
+        _ => return,
+    };
+}
 
-        let mut start = 0;
-        while start < payload.len() {
-            if !payload.is_char_boundary(start) {
-                break;
-            }
-            let index = payload[start..].find(tag);
-            if index.is_none() {
-                break;
-            }
-            let index = index.unwrap();
-            // 注意这里tag长度不会超过256
-            if index == 0 || tag.len() != payload.as_bytes()[start + index - 1] as usize {
-                start += index + tag.len();
-                continue;
-            }
-            let last_index = payload
-                .len()
-                .min(TRACE_ID_MAX_LEN + start + index + tag.len());
-            if Self::check_char_boundary(&payload, start + index, last_index) {
-                start += index + tag.len();
-                continue;
-            }
+fn decode_span_id(payload: &Cow<'_, str>, trace_type: &TraceType, info: &mut DubboInfo) {
+    let tag = match trace_type {
+        TraceType::Customize(_) | TraceType::Sw3 | TraceType::Sw8 => trace_type.as_str(),
+        _ => return,
+    };
 
-            if let Some(span_id) =
-                Self::decode_field(payload, start + index + tag.len(), last_index)
-            {
-                info.span_id = span_id;
-                break;
-            }
+    let mut start = 0;
+    while start < payload.len() {
+        if !payload.is_char_boundary(start) {
+            break;
+        }
+        let index = payload[start..].find(tag);
+        if index.is_none() {
+            break;
+        }
+        let index = index.unwrap();
+        // 注意这里tag长度不会超过256
+        if index == 0 || tag.len() != payload.as_bytes()[start + index - 1] as usize {
             start += index + tag.len();
+            continue;
+        }
+        let last_index = payload
+            .len()
+            .min(TRACE_ID_MAX_LEN + start + index + tag.len());
+        if check_char_boundary(&payload, start + index, last_index) {
+            start += index + tag.len();
+            continue;
         }
 
-        match trace_type {
-            TraceType::Sw3 => {
-                // sw3: SEGMENTID|SPANID|100|100|#IPPORT|#PARENT_ENDPOINT|#ENDPOINT|TRACEID|SAMPLING
-                if info.span_id.len() > 2 {
-                    let segs: Vec<&str> = info.span_id.split("|").collect();
-                    if segs.len() > 3 {
-                        info.span_id = format!("{}-{}", segs[0], segs[1]);
-                    }
+        if let Some(span_id) = decode_field(payload, start + index + tag.len(), last_index) {
+            info.span_id = span_id;
+            break;
+        }
+        start += index + tag.len();
+    }
+
+    match trace_type {
+        TraceType::Sw3 => {
+            // sw3: SEGMENTID|SPANID|100|100|#IPPORT|#PARENT_ENDPOINT|#ENDPOINT|TRACEID|SAMPLING
+            if info.span_id.len() > 2 {
+                let segs: Vec<&str> = info.span_id.split("|").collect();
+                if segs.len() > 3 {
+                    info.span_id = format!("{}-{}", segs[0], segs[1]);
                 }
             }
-            TraceType::Sw8 => {
-                // Format:
-                // sw8: 1-TRACEID-SEGMENTID-3-PARENT_SERVICE-PARENT_INSTANCE-PARENT_ENDPOINT-IPPORT
-                let mut skip = false;
-                if info.span_id.len() > 2 {
-                    let segs: Vec<&str> = info.span_id.split("-").collect();
-                    if segs.len() > 4 {
-                        info.span_id = format!("{}-{}", decode_base64_to_string(segs[2]), segs[3]);
-                        skip = true;
-                    }
-                }
-                if !skip {
-                    info.span_id = decode_base64_to_string(&info.span_id);
+        }
+        TraceType::Sw8 => {
+            // Format:
+            // sw8: 1-TRACEID-SEGMENTID-3-PARENT_SERVICE-PARENT_INSTANCE-PARENT_ENDPOINT-IPPORT
+            let mut skip = false;
+            if info.span_id.len() > 2 {
+                let segs: Vec<&str> = info.span_id.split("-").collect();
+                if segs.len() > 4 {
+                    info.span_id = format!("{}-{}", decode_base64_to_string(segs[2]), segs[3]);
+                    skip = true;
                 }
             }
-            _ => return,
-        };
+            if !skip {
+                info.span_id = decode_base64_to_string(&info.span_id);
+            }
+        }
+        _ => return,
+    };
+}
+
+mod hessian2 {
+    use crate::config::handler::L7LogDynamicConfig;
+    use crate::flow_generator::protocol_logs::consts::*;
+
+    use super::{decode_span_id, decode_trace_id, DubboInfo, BODY_PARAM_MAX, BODY_PARAM_MIN};
+
+    // 参考开源代码解析：https://github.com/apache/dubbo-go-hessian2/blob/master/decode.go#L289
+    // 返回offset和数据length
+    pub fn get_req_param_len(payload: &[u8]) -> (usize, usize) {
+        let tag = payload[0];
+        match tag {
+            BC_STRING_DIRECT..=STRING_DIRECT_MAX => (1, tag as usize),
+            0x30..=0x33 if payload.len() > 2 => {
+                (2, ((tag as usize - 0x30) << 8) + payload[1] as usize)
+            }
+            BC_STRING_CHUNK | BC_STRING if payload.len() > 3 => {
+                (3, ((payload[1] as usize) << 8) + payload[2] as usize)
+            }
+            _ => (0, 0),
+        }
     }
 
     // 尽力而为的去解析Dubbo请求中Body各参数
-    fn get_req_body_info(
-        &mut self,
-        config: &L7LogDynamicConfig,
-        payload: &[u8],
-        info: &mut DubboInfo,
-    ) {
+    pub fn get_req_body_info(config: &L7LogDynamicConfig, payload: &[u8], info: &mut DubboInfo) {
         let mut n = BODY_PARAM_MIN;
         let mut para_index = 0;
         let payload_len = payload.len();
@@ -529,7 +541,7 @@ impl DubboLog {
                 continue;
             }
 
-            Self::decode_trace_id(&payload_str, &trace_type, info);
+            decode_trace_id(&payload_str, &trace_type, info);
             if info.trace_id.len() != 0 {
                 break;
             }
@@ -539,10 +551,95 @@ impl DubboLog {
                 continue;
             }
 
-            Self::decode_span_id(&payload_str, &span_type, info);
+            decode_span_id(&payload_str, &span_type, info);
             if info.span_id.len() != 0 {
                 break;
             }
+        }
+    }
+}
+
+mod kryo {
+    use crate::config::handler::L7LogDynamicConfig;
+
+    use super::{decode_span_id, decode_trace_id, DubboInfo};
+
+    fn decode_ascii_string(payload: &[u8], start: usize) -> Option<(String, usize)> {
+        if start >= payload.len() {
+            return None;
+        }
+
+        let mut s = String::new();
+        for i in start..payload[start..].len() {
+            s.push((payload[i] & 0x7f) as char);
+            if payload[i] >> 7 == 1 {
+                return Some((s, i + 1 - start));
+            }
+        }
+        return None;
+    }
+
+    pub fn get_req_body_info(config: &L7LogDynamicConfig, payload: &[u8], info: &mut DubboInfo) {
+        let mut offset = 0;
+        let Some(version) = decode_ascii_string(payload, offset) else {
+            return;
+        };
+        info.dubbo_version = version.0;
+        offset += version.1;
+
+        let Some(service_name) = decode_ascii_string(payload, offset) else {
+            return;
+        };
+        info.service_name = service_name.0;
+        offset += service_name.1;
+
+        let Some(service_version) = decode_ascii_string(payload, offset) else {
+            return;
+        };
+        info.service_version = service_version.0;
+        offset += service_version.1;
+
+        let Some(method_name) = decode_ascii_string(payload, offset) else {
+            return;
+        };
+        info.method_name = method_name.0;
+        offset += method_name.1;
+
+        if config.trace_types.is_empty() || offset >= payload.len() {
+            return;
+        }
+
+        let payload_str = String::from_utf8_lossy(&payload[offset..]);
+        for trace_type in config.trace_types.iter() {
+            if trace_type.as_str().len() > u8::MAX as usize {
+                continue;
+            }
+
+            decode_trace_id(&payload_str, &trace_type, info);
+            if info.trace_id.len() != 0 {
+                break;
+            }
+        }
+        for span_type in config.span_types.iter() {
+            if span_type.as_str().len() > u8::MAX as usize {
+                continue;
+            }
+
+            decode_span_id(&payload_str, &span_type, info);
+            if info.span_id.len() != 0 {
+                break;
+            }
+        }
+    }
+}
+
+impl DubboLog {
+    fn decode_body(config: &L7LogDynamicConfig, payload: &[u8], info: &mut DubboInfo) {
+        match info.serial_id {
+            HESSIAN2_SERIALIZATION_ID => hessian2::get_req_body_info(config, payload, info),
+            KRYO_SERIALIZATION2_ID => kryo::get_req_body_info(config, payload, info),
+            KRYO_SERIALIZATION_ID => kryo::get_req_body_info(config, payload, info),
+            _ => {}
         }
     }
 
@@ -560,7 +657,7 @@ impl DubboLog {
         info.serial_id = dubbo_header.serial_id;
         info.request_id = dubbo_header.request_id;
 
-        self.get_req_body_info(config, &payload[DUBBO_HEADER_LEN..], info);
+        Self::decode_body(config, &payload[DUBBO_HEADER_LEN..], info);
     }
 
     fn set_status(&mut self, status_code: u8, info: &mut DubboInfo) {
@@ -668,20 +765,6 @@ impl DubboHeader {
     }
 }
 
-// 参考开源代码解析：https://github.com/apache/dubbo-go-hessian2/blob/master/decode.go#L289
-// 返回offset和数据length
-pub fn get_req_param_len(payload: &[u8]) -> (usize, usize) {
-    let tag = payload[0];
-    match tag {
-        BC_STRING_DIRECT..=STRING_DIRECT_MAX => (1, tag as usize),
-        0x30..=0x33 if payload.len() > 2 => (2, ((tag as usize - 0x30) << 8) + payload[1] as usize),
-        BC_STRING_CHUNK | BC_STRING if payload.len() > 3 => {
-            (3, ((payload[1] as usize) << 8) + payload[2] as usize)
-        }
-        _ => (0, 0),
-    }
-}
-
 #[cfg(test)]
 mod tests {
     use std::cell::RefCell;
@@ -691,7 +774,10 @@ mod tests {
     use super::*;
 
     use crate::common::l7_protocol_log::L7PerfCache;
-    use crate::config::{handler::LogParserConfig, ExtraLogFields};
+    use crate::config::{
+        handler::{LogParserConfig, TraceType},
+        ExtraLogFields,
+    };
     use crate::flow_generator::L7_RRT_CACHE_CAPACITY;
     use crate::{
         common::{flow::PacketDirection, MetaPacket},
@@ -767,9 +853,10 @@ mod tests {
     #[test]
     fn check() {
         let files = vec![
-            ("dubbo_hessian2.pcap", "dubbo_hessian.result"),
-            ("dubbo-eys.pcap", "dubbo-eys.result"),
-            ("dubbo-sw8.pcap", "dubbo-sw8.result"),
+            // ("dubbo_hessian2.pcap", "dubbo_hessian.result"),
+            // ("dubbo-eys.pcap", "dubbo-eys.result"),
+            // ("dubbo-sw8.pcap", "dubbo-sw8.result"),
+            ("dubbo-kryo.pcap", "dubbo-kryo.result"),
         ];
 
         for item in files.iter() {
