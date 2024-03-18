@@ -33,6 +33,7 @@ type Recorder struct {
 	cfg config.RecorderConfig
 	ctx context.Context
 
+	org             *common.ORG
 	domainRefresher *domain
 }
 
@@ -46,11 +47,12 @@ func NewRecorder(ctx context.Context, cfg config.RecorderConfig, eventQueue *que
 		cfg: cfg,
 		ctx: ctx,
 
+		org:             org,
 		domainRefresher: newDomain(ctx, cfg, eventQueue, org, domainLcuuid, domainName),
 	}
 }
 
 func (r *Recorder) Refresh(target int, cloudData cloudmodel.Resource) error {
-	log.Infof("recorder: %s refresh started", r.domainRefresher.domainName)
+	log.Info(r.org.LogPre("recorder: %s refresh started", r.domainRefresher.domainName))
 	return r.domainRefresher.Refresh(target, cloudData)
 }
