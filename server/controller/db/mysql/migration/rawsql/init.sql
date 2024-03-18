@@ -1606,6 +1606,8 @@ CREATE TABLE IF NOT EXISTS vtap_group_configuration(
     sync_interval             INTEGER DEFAULT NULL,
     stats_interval            INTEGER,
     rsyslog_enabled           TINYINT(1) COMMENT '0: disabled 1:enabled',
+    system_load_circuit_breaker_threshold FLOAT(8,2) DEFAULT NULL,
+    system_load_circuit_breaker_metric    CHAR(64) DEFAULT NULL,
     max_tx_bandwidth          BIGINT COMMENT 'unit: bps',
     bandwidth_probe_interval  INTEGER,
     tap_interface_regex       TEXT,

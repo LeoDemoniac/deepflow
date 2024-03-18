@@ -84,6 +84,9 @@ var DefaultVTapGroupConfig = &mysql.VTapGroupConfiguration{
 	AnalyzerIP:                    &DefaultAnalyzerIP,
 	WasmPlugins:                   &DefaultWasmPlugins,
 	SoPlugins:                     &DefaultSoPlugins,
+
+	SystemLoadCircuitBreakerThreshold: &DefaultSystemLoadCircuitBreakerThreshold,
+	SystemLoadCircuitBreakerMetric:    &DefaultSystemLoadCircuitBreakerMetric,
 }
 
 var (
@@ -151,4 +154,7 @@ var (
 	DefaultAnalyzerIP                    = ""
 	DefaultWasmPlugins                   = ""
 	DefaultSoPlugins                     = ""
+
+	DefaultSystemLoadCircuitBreakerThreshold = float32(1.0)
+	DefaultSystemLoadCircuitBreakerMetric    = "load15"
 )
