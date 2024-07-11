@@ -8,6 +8,10 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: agent - windows compile error [#7360](https://github.com/deepflowio/deepflow/pull/7360) by [yuanchaoa](https://github.com/yuanchaoa)
+* fix: agent - vm mac address not updated [#7355](https://github.com/deepflowio/deepflow/pull/7355) by [yuanchaoa](https://github.com/yuanchaoa)
+* fix: modify system alarm_policy filter conditions and tag_conditions [#7351](https://github.com/deepflowio/deepflow/pull/7351) by [Ericsssss](https://github.com/Ericsssss)
+* fix: update member type of rawtracemap [#7349](https://github.com/deepflowio/deepflow/pull/7349) by [taloric](https://github.com/taloric)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +39,9 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: agent - add inner queue to mirror dispatcher [#7352](https://github.com/deepflowio/deepflow/pull/7352) by [yuanchaoa](https://github.com/yuanchaoa)
+* feat: recorder supports updating vinterface device id [#7346](https://github.com/deepflowio/deepflow/pull/7346) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* feat: Agent remote exec returns specific errors [#7298](https://github.com/deepflowio/deepflow/pull/7298) by [roryye](https://github.com/roryye)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -56,7 +63,8 @@
 * feat: server directly reports metrics of load1_by_cpu_num that can be used for alert [#7088](https://github.com/deepflowio/deepflow/pull/7088) by [lzf575](https://github.com/lzf575)
 
 #### Refactoring
-
+* refactor: rename package name [#7344](https://github.com/deepflowio/deepflow/pull/7344) by [taloric](https://github.com/taloric)
+* refactor: move trace-map dir path [#7343](https://github.com/deepflowio/deepflow/pull/7343) by [taloric](https://github.com/taloric)
 * refactor: Change crate name [#7155](https://github.com/deepflowio/deepflow/pull/7155) by [rvql](https://github.com/rvql)
 
 #### Performance
