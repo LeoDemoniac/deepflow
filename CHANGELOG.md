@@ -35,6 +35,11 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: Get metrics ignore certain databases [#7427](https://github.com/deepflowio/deepflow/pull/7427) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: Get metrics ignore time [#7425](https://github.com/deepflowio/deepflow/pull/7425) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: agent - dispatcher support set cpu affinity [#7424](https://github.com/deepflowio/deepflow/pull/7424) by [yuanchaoa](https://github.com/yuanchaoa)
+* feat: create sub domian set default team id [#7420](https://github.com/deepflowio/deepflow/pull/7420) by [askyrie](https://github.com/askyrie)
+* feat: Optimize get metrics performance [#7419](https://github.com/deepflowio/deepflow/pull/7419) by [xiaochaoren1](https://github.com/xiaochaoren1)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -56,13 +61,14 @@
 * feat: server directly reports metrics of load1_by_cpu_num that can be used for alert [#7088](https://github.com/deepflowio/deepflow/pull/7088) by [lzf575](https://github.com/lzf575)
 
 #### Refactoring
-
+* refactor: trace_tree add topic field [#7418](https://github.com/deepflowio/deepflow/pull/7418) by [lzf575](https://github.com/lzf575)
+* refactor: trace-id-with-index is enabled by default and the type is hash [#7416](https://github.com/deepflowio/deepflow/pull/7416) by [lzf575](https://github.com/lzf575)
 * refactor: Change crate name [#7155](https://github.com/deepflowio/deepflow/pull/7155) by [rvql](https://github.com/rvql)
 
 #### Performance
-
+* perf: optimize trace_tree slice assignment [#7414](https://github.com/deepflowio/deepflow/pull/7414) by [lzf575](https://github.com/lzf575)
+* perf: improve trace_tree search index [#7413](https://github.com/deepflowio/deepflow/pull/7413) by [lzf575](https://github.com/lzf575)
 * perf: improve parsing RequestResource from http.url of OTel data [#7172](https://github.com/deepflowio/deepflow/pull/7172) by [lzf575](https://github.com/lzf575)
-
 
 #### Documentation
 * docs: rename opentemetry to opentelemetry [#7245](https://github.com/deepflowio/deepflow/pull/7245) by [lzf575](https://github.com/lzf575)
