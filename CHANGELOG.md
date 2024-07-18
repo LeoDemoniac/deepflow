@@ -8,6 +8,12 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: Fix query error when database is prometheus [#7467](https://github.com/deepflowio/deepflow/pull/7467) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* fix: stats_interval default should be 10 [#7465](https://github.com/deepflowio/deepflow/pull/7465) by [lzf575](https://github.com/lzf575)
+* fix: update tagrecorder check subdomain team id [#7461](https://github.com/deepflowio/deepflow/pull/7461) by [roryye](https://github.com/roryye)
+* fix: process resource api does not response sub_domain field [#7450](https://github.com/deepflowio/deepflow/pull/7450) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* fix: remove agent group name check [#7444](https://github.com/deepflowio/deepflow/pull/7444) by [roryye](https://github.com/roryye)
+* fix: agent command heart beat [#7438](https://github.com/deepflowio/deepflow/pull/7438) by [roryye](https://github.com/roryye)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +41,7 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: Tracemap add trace_id_query_iterations config [#7458](https://github.com/deepflowio/deepflow/pull/7458) by [xiaochaoren1](https://github.com/xiaochaoren1)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -56,13 +63,12 @@
 * feat: server directly reports metrics of load1_by_cpu_num that can be used for alert [#7088](https://github.com/deepflowio/deepflow/pull/7088) by [lzf575](https://github.com/lzf575)
 
 #### Refactoring
-
+* refactor: agent modify the system free memory alert logic [#7455](https://github.com/deepflowio/deepflow/pull/7455) by [TomatoMr](https://github.com/TomatoMr)
 * refactor: Change crate name [#7155](https://github.com/deepflowio/deepflow/pull/7155) by [rvql](https://github.com/rvql)
 
 #### Performance
-
+* perf: enhance profile api performance [#7401](https://github.com/deepflowio/deepflow/pull/7401) by [sharang](https://github.com/sharang)
 * perf: improve parsing RequestResource from http.url of OTel data [#7172](https://github.com/deepflowio/deepflow/pull/7172) by [lzf575](https://github.com/lzf575)
-
 
 #### Documentation
 * docs: rename opentemetry to opentelemetry [#7245](https://github.com/deepflowio/deepflow/pull/7245) by [lzf575](https://github.com/lzf575)
