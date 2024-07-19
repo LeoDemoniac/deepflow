@@ -8,6 +8,9 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: update agent commands permission [#7480](https://github.com/deepflowio/deepflow/pull/7480) by [roryye](https://github.com/roryye)
+* fix: Delete an alarm policy #25866 [#7478](https://github.com/deepflowio/deepflow/pull/7478) by [Ericsssss](https://github.com/Ericsssss)
+* fix: solve the problem that sql is changed to lowercase [#7475](https://github.com/deepflowio/deepflow/pull/7475) by [duandaa](https://github.com/duandaa)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +38,8 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: Querier support no limit [#7473](https://github.com/deepflowio/deepflow/pull/7473) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: agent adds the CommandParam fields, modifies the param validation method [#7464](https://github.com/deepflowio/deepflow/pull/7464) by [TomatoMr](https://github.com/TomatoMr)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
