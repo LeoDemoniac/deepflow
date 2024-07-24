@@ -8,6 +8,7 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: Java uprobe regex not configured [#7532](https://github.com/deepflowio/deepflow/pull/7532) by [rvql](https://github.com/rvql)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +36,14 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: Tagrecorder support update team_id [#7543](https://github.com/deepflowio/deepflow/pull/7543) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: Modify alert_event event_level tag translation [#7542](https://github.com/deepflowio/deepflow/pull/7542) by [Ericsssss](https://github.com/Ericsssss)
+* feat: sub domain support update team [#7535](https://github.com/deepflowio/deepflow/pull/7535) by [askyrie](https://github.com/askyrie)
+* feat: update profile value to u64 [#7531](https://github.com/deepflowio/deepflow/pull/7531) by [taloric](https://github.com/taloric)
+* feat: update alert event field and write flow_tag [#7529](https://github.com/deepflowio/deepflow/pull/7529) by [lzf575](https://github.com/lzf575)
+* feat: Modify sub_domain cluster_id description [#7527](https://github.com/deepflowio/deepflow/pull/7527) by [SongZhen0704](https://github.com/SongZhen0704)
+* feat: unifies controller recorder log [#7515](https://github.com/deepflowio/deepflow/pull/7515) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* feat: Modify table alert_event query sql [#7476](https://github.com/deepflowio/deepflow/pull/7476) by [Ericsssss](https://github.com/Ericsssss)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
