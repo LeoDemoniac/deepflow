@@ -8,6 +8,10 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: Modify alert_event metric_value and add ip tag  #26017/26020 [#7637](https://github.com/deepflowio/deepflow/pull/7637) by [Ericsssss](https://github.com/Ericsssss)
+* fix: agent cmd panic [#7631](https://github.com/deepflowio/deepflow/pull/7631) by [roryye](https://github.com/roryye)
+* fix: Modify custom tag show tags error #25979 [#7628](https://github.com/deepflowio/deepflow/pull/7628) by [Ericsssss](https://github.com/Ericsssss)
+* fix: Translate fields by table [#7627](https://github.com/deepflowio/deepflow/pull/7627) by [xiaochaoren1](https://github.com/xiaochaoren1)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +39,12 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: add request type from Kafka trace map [#7639](https://github.com/deepflowio/deepflow/pull/7639) by [lzf575](https://github.com/lzf575)
+* feat: server - Add configuration items to server [#7629](https://github.com/deepflowio/deepflow/pull/7629) by [yuanchaoa](https://github.com/yuanchaoa)
+* feat: adds blocker module to logger [#7625](https://github.com/deepflowio/deepflow/pull/7625) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* feat: limit number of agent_sync [#7614](https://github.com/deepflowio/deepflow/pull/7614) by [askyrie](https://github.com/askyrie)
+* feat: agent - do not send time_span to server [#7610](https://github.com/deepflowio/deepflow/pull/7610) by [yuanchaoa](https://github.com/yuanchaoa)
+* feat: supports lua plugin [#7602](https://github.com/deepflowio/deepflow/pull/7602) by [duandaa](https://github.com/duandaa)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -56,7 +66,7 @@
 * feat: server directly reports metrics of load1_by_cpu_num that can be used for alert [#7088](https://github.com/deepflowio/deepflow/pull/7088) by [lzf575](https://github.com/lzf575)
 
 #### Refactoring
-
+* refactor: polish agent config [#7342](https://github.com/deepflowio/deepflow/pull/7342) by [sharang](https://github.com/sharang)
 * refactor: Change crate name [#7155](https://github.com/deepflowio/deepflow/pull/7155) by [rvql](https://github.com/rvql)
 
 #### Performance
