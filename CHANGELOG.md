@@ -35,6 +35,12 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: change lua function name [#7723](https://github.com/deepflowio/deepflow/pull/7723) by [duandaa](https://github.com/duandaa)
+* feat: kubernetes support OpenGaussCluster [#7722](https://github.com/deepflowio/deepflow/pull/7722) by [askyrie](https://github.com/askyrie)
+* feat: agent - eBPF Adjust method for checking if agent is running [#7718](https://github.com/deepflowio/deepflow/pull/7718) by [yinjiping](https://github.com/yinjiping)
+* feat: change lua function name [#7715](https://github.com/deepflowio/deepflow/pull/7715) by [duandaa](https://github.com/duandaa)
+* feat: Ch_vtap_port support chost and pod_node [#7675](https://github.com/deepflowio/deepflow/pull/7675) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: add config multiple_sockets_to_ingester [#7668](https://github.com/deepflowio/deepflow/pull/7668) by [lzf575](https://github.com/lzf575)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
