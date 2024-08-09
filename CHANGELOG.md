@@ -8,6 +8,8 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: not found replicaset pod [#7762](https://github.com/deepflowio/deepflow/pull/7762) by [askyrie](https://github.com/askyrie)
+* fix: Modify alert_policy filter [#7757](https://github.com/deepflowio/deepflow/pull/7757) by [Ericsssss](https://github.com/Ericsssss)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +37,11 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: mac displays the resources to which the agent belongs [#7765](https://github.com/deepflowio/deepflow/pull/7765) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: Ingester use the ORG log interface to write logs [#7763](https://github.com/deepflowio/deepflow/pull/7763) by [lzf575](https://github.com/lzf575)
+* feat: support opengauss svc [#7755](https://github.com/deepflowio/deepflow/pull/7755) by [askyrie](https://github.com/askyrie)
+* feat: add function_types in profile api response [#7754](https://github.com/deepflowio/deepflow/pull/7754) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: moves server controller logger module to libs [#7742](https://github.com/deepflowio/deepflow/pull/7742) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
