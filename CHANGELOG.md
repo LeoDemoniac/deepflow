@@ -8,6 +8,11 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: recorder log fmt error [#7782](https://github.com/deepflowio/deepflow/pull/7782) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* fix: Modify ch_table update time #26153 [#7777](https://github.com/deepflowio/deepflow/pull/7777) by [Ericsssss](https://github.com/Ericsssss)
+* fix: server allows empty values not to be overwritten as default values [#7775](https://github.com/deepflowio/deepflow/pull/7775) by [TomatoMr](https://github.com/TomatoMr)
+* fix: resolve show tag values filter error [#7774](https://github.com/deepflowio/deepflow/pull/7774) by [duandaa](https://github.com/duandaa)
+* fix: profileDebug assert error [#7760](https://github.com/deepflowio/deepflow/pull/7760) by [duandaa](https://github.com/duandaa)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +40,11 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: Using libpcap without restarting when the network card does not… [#7780](https://github.com/deepflowio/deepflow/pull/7780) by [yuanchaoa](https://github.com/yuanchaoa)
+* feat: add endpoint-tcp-port-name configuration [#7778](https://github.com/deepflowio/deepflow/pull/7778) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: use dynamic library instead of libpcap static library [#7772](https://github.com/deepflowio/deepflow/pull/7772) by [yuanchaoa](https://github.com/yuanchaoa)
+* feat: increase billing function control capabilities [#7714](https://github.com/deepflowio/deepflow/pull/7714) by [jin-xiaofeng](https://github.com/jin-xiaofeng)
+* feat: agent license func operate [#7712](https://github.com/deepflowio/deepflow/pull/7712) by [roryye](https://github.com/roryye)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -56,7 +66,7 @@
 * feat: server directly reports metrics of load1_by_cpu_num that can be used for alert [#7088](https://github.com/deepflowio/deepflow/pull/7088) by [lzf575](https://github.com/lzf575)
 
 #### Refactoring
-
+* refactor: agent config [#7745](https://github.com/deepflowio/deepflow/pull/7745) by [TomatoMr](https://github.com/TomatoMr)
 * refactor: Change crate name [#7155](https://github.com/deepflowio/deepflow/pull/7155) by [rvql](https://github.com/rvql)
 
 #### Performance
