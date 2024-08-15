@@ -8,6 +8,13 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: Add libpcap dependency to installation package [#7833](https://github.com/deepflowio/deepflow/pull/7833) by [yuanchaoa](https://github.com/yuanchaoa)
+* fix: service data is not written to ck [#7832](https://github.com/deepflowio/deepflow/pull/7832) by [duandaa](https://github.com/duandaa)
+* fix: fix agent rebalance panic [#7831](https://github.com/deepflowio/deepflow/pull/7831) by [roryye](https://github.com/roryye)
+* fix: Modify alert_event enum tag filter error #26069 [#7828](https://github.com/deepflowio/deepflow/pull/7828) by [Ericsssss](https://github.com/Ericsssss)
+* fix: fix the problem of config pointer copy [#7825](https://github.com/deepflowio/deepflow/pull/7825) by [jin-xiaofeng](https://github.com/jin-xiaofeng)
+* fix: Modify alert_event _id filter error #26055 [#7818](https://github.com/deepflowio/deepflow/pull/7818) by [Ericsssss](https://github.com/Ericsssss)
+* fix: Increase the Tars protocol number in the Server section [#7813](https://github.com/deepflowio/deepflow/pull/7813) by [incoffeemonster](https://github.com/incoffeemonster)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +42,7 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: Modify policy_app_type value [#7822](https://github.com/deepflowio/deepflow/pull/7822) by [Ericsssss](https://github.com/Ericsssss)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
