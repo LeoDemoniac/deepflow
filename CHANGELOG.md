@@ -8,6 +8,7 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: memory profile feature compile failed [#8157](https://github.com/deepflowio/deepflow/pull/8157) by [lzf575](https://github.com/lzf575)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -56,7 +57,9 @@
 * feat: server directly reports metrics of load1_by_cpu_num that can be used for alert [#7088](https://github.com/deepflowio/deepflow/pull/7088) by [lzf575](https://github.com/lzf575)
 
 #### Refactoring
-
+* refactor: Remove extended proc event handler [#8161](https://github.com/deepflowio/deepflow/pull/8161) by [rvql](https://github.com/rvql)
+* refactor: Remove old profiler regex [#8158](https://github.com/deepflowio/deepflow/pull/8158) by [rvql](https://github.com/rvql)
+* refactor: agent adds a disable_cgroups option [#8140](https://github.com/deepflowio/deepflow/pull/8140) by [TomatoMr](https://github.com/TomatoMr)
 * refactor: Change crate name [#7155](https://github.com/deepflowio/deepflow/pull/7155) by [rvql](https://github.com/rvql)
 
 #### Performance
