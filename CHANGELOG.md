@@ -8,6 +8,9 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: ebpf dispatcher build error [#8197](https://github.com/deepflowio/deepflow/pull/8197) by [TomatoMr](https://github.com/TomatoMr)
+* fix: peer connection api limit [#8194](https://github.com/deepflowio/deepflow/pull/8194) by [askyrie](https://github.com/askyrie)
+* fix: incorrect tcp rrt [#8152](https://github.com/deepflowio/deepflow/pull/8152) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +38,10 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: Modify default l7 protocol enable [#8198](https://github.com/deepflowio/deepflow/pull/8198) by [yuanchaoa](https://github.com/yuanchaoa)
+* feat: reduce the application protocols parsed by default [#8196](https://github.com/deepflowio/deepflow/pull/8196) by [sharang](https://github.com/sharang)
+* feat: default genesis sync vpc name [#8192](https://github.com/deepflowio/deepflow/pull/8192) by [askyrie](https://github.com/askyrie)
+* feat: update cloud region filter [#8105](https://github.com/deepflowio/deepflow/pull/8105) by [askyrie](https://github.com/askyrie)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
