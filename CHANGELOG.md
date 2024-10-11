@@ -8,6 +8,10 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: modify exist attribute tag translation [#8272](https://github.com/deepflowio/deepflow/pull/8272) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* fix: fix exist attribute tag error [#8269](https://github.com/deepflowio/deepflow/pull/8269) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* fix: fix exist attribute tag error [#8267](https://github.com/deepflowio/deepflow/pull/8267) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* fix: process matcher error [#8264](https://github.com/deepflowio/deepflow/pull/8264) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
