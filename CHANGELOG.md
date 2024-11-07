@@ -8,6 +8,8 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: ckwriter writing failure caused by not writing data for a long time [#8470](https://github.com/deepflowio/deepflow/pull/8470) by [lzf575](https://github.com/lzf575)
+* fix: Setting type, parser and default value [#8464](https://github.com/deepflowio/deepflow/pull/8464) by [rvql](https://github.com/rvql)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +37,8 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: single-endpoints db support storing packet where the tap_side i… [#8468](https://github.com/deepflowio/deepflow/pull/8468) by [yuanchaoa](https://github.com/yuanchaoa)
+* feat: agent - eBPF Adapt to 4.19.90-2211.5.0.0178.22.uel20.x86_64 [#8461](https://github.com/deepflowio/deepflow/pull/8461) by [yinjiping](https://github.com/yinjiping)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
