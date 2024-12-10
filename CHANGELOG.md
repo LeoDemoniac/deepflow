@@ -8,6 +8,9 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: change proc socket sync interval config name and default value [#8658](https://github.com/deepflowio/deepflow/pull/8658) by [rvql](https://github.com/rvql)
+* fix: agent group configuration api response unexcepted value [#8647](https://github.com/deepflowio/deepflow/pull/8647) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* fix: add alarm_label table [#8642](https://github.com/deepflowio/deepflow/pull/8642) by [SongZhen0704](https://github.com/SongZhen0704)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +38,9 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: sender add compress flag [#8639](https://github.com/deepflowio/deepflow/pull/8639) by [taloric](https://github.com/taloric)
+* feat: adds resource synchronization delay alarms [#8612](https://github.com/deepflowio/deepflow/pull/8612) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* feat: add resource association abnormal alarm [#8585](https://github.com/deepflowio/deepflow/pull/8585) by [xiaochaoren1](https://github.com/xiaochaoren1)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -65,8 +71,8 @@
 
 
 #### Documentation
+* docs: update agent config doc [#8660](https://github.com/deepflowio/deepflow/pull/8660) by [sharang](https://github.com/sharang)
 * docs: rename opentemetry to opentelemetry [#7245](https://github.com/deepflowio/deepflow/pull/7245) by [lzf575](https://github.com/lzf575)
-
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
