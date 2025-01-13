@@ -8,6 +8,7 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: agent - eBPF Fix find_pid_by_name() missing closedir() [#8908](https://github.com/deepflowio/deepflow/pull/8908) by [yinjiping](https://github.com/yinjiping)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +36,9 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* Revert "feat: upgrades golang version in go.mod" [#8906](https://github.com/deepflowio/deepflow/pull/8906) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* feat: upgrades golang version in go.mod [#8897](https://github.com/deepflowio/deepflow/pull/8897) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* feat: support l7 parsing for rocketmq protocol [#8874](https://github.com/deepflowio/deepflow/pull/8874) by [kylewanginchina](https://github.com/kylewanginchina)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -69,4 +73,5 @@
 
 
 #### Chore
+* chore: remove default enable config for rocketmq [#8905](https://github.com/deepflowio/deepflow/pull/8905) by [kylewanginchina](https://github.com/kylewanginchina)
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
