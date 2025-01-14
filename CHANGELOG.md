@@ -8,6 +8,7 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: querier show subnet error when subnet filtering [#8920](https://github.com/deepflowio/deepflow/pull/8920) by [xiaochaoren1](https://github.com/xiaochaoren1)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +36,10 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: support decap special vxlan [#8925](https://github.com/deepflowio/deepflow/pull/8925) by [yuanchaoa](https://github.com/yuanchaoa)
+* feat: agent - Update protocol_inference.h [#8919](https://github.com/deepflowio/deepflow/pull/8919) by [yinjiping](https://github.com/yinjiping)
+* feat: agent - eBPF Remove user process restrictions in the profile [#8917](https://github.com/deepflowio/deepflow/pull/8917) by [yinjiping](https://github.com/yinjiping)
+* feat: support ebpf for rocketmq protocol [#8901](https://github.com/deepflowio/deepflow/pull/8901) by [kylewanginchina](https://github.com/kylewanginchina)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -56,7 +61,7 @@
 * feat: server directly reports metrics of load1_by_cpu_num that can be used for alert [#7088](https://github.com/deepflowio/deepflow/pull/7088) by [lzf575](https://github.com/lzf575)
 
 #### Refactoring
-
+* refactor: rename cloud server to cloud host [#8926](https://github.com/deepflowio/deepflow/pull/8926) by [lzf575](https://github.com/lzf575)
 * refactor: Change crate name [#7155](https://github.com/deepflowio/deepflow/pull/7155) by [rvql](https://github.com/rvql)
 
 #### Performance
