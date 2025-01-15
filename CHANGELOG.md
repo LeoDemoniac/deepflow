@@ -8,6 +8,7 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: The process matcher is missing kernel processes [#8935](https://github.com/deepflowio/deepflow/pull/8935) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +36,10 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: querier optimize dynamic metrics [#8939](https://github.com/deepflowio/deepflow/pull/8939) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: agent - eBPF Adjust Profile MAP Recycling Log Level [#8937](https://github.com/deepflowio/deepflow/pull/8937) by [yinjiping](https://github.com/yinjiping)
+* feat: Support agent max socket limit [#8932](https://github.com/deepflowio/deepflow/pull/8932) by [rvql](https://github.com/rvql)
+* feat: supports db initialization in postgres [#8913](https://github.com/deepflowio/deepflow/pull/8913) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
