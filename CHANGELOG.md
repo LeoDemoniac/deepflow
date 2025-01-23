@@ -35,6 +35,12 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: agent - eBPF Adaptation for TLinux 4.14.105-19-0019 [#9013](https://github.com/deepflowio/deepflow/pull/9013) by [yinjiping](https://github.com/yinjiping)
+* feat: discard the old configuration - 2 [#9010](https://github.com/deepflowio/deepflow/pull/9010) by [SongZhen0704](https://github.com/SongZhen0704)
+* feat: afpacket fanout support ebpf [#9007](https://github.com/deepflowio/deepflow/pull/9007) by [yuanchaoa](https://github.com/yuanchaoa)
+* feat: agent - eBPF Support AF_PACKET fanout eBPF (#9004) [#9005](https://github.com/deepflowio/deepflow/pull/9005) by [yinjiping](https://github.com/yinjiping)
+* feat: modifies vtap_type field default value [#9003](https://github.com/deepflowio/deepflow/pull/9003) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* feat: discard the old agent configuration - 1 [#8993](https://github.com/deepflowio/deepflow/pull/8993) by [SongZhen0704](https://github.com/SongZhen0704)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
