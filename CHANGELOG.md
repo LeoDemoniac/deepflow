@@ -8,6 +8,7 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: agent group config command output is inaccurate [#8945](https://github.com/deepflowio/deepflow/pull/8945) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +36,10 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: agent - eBPF Modify kernel cache data flush time threshold [#9126](https://github.com/deepflowio/deepflow/pull/9126) by [yinjiping](https://github.com/yinjiping)
+* feat: Support packet capture in multiple namespaces [#9122](https://github.com/deepflowio/deepflow/pull/9122) by [rvql](https://github.com/rvql)
+* feat: dubbo support fastjson2 [#9119](https://github.com/deepflowio/deepflow/pull/9119) by [yuanchaoa](https://github.com/yuanchaoa)
+* feat: improves performance of recorder synchronization when there are a large number of process data [#8942](https://github.com/deepflowio/deepflow/pull/8942) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
