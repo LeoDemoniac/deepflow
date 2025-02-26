@@ -8,6 +8,9 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: the name of native tag cannot use reserved words [#9202](https://github.com/deepflowio/deepflow/pull/9202) by [lzf575](https://github.com/lzf575)
+* fix: adding an existing native tag should result in a failure [#9201](https://github.com/deepflowio/deepflow/pull/9201) by [lzf575](https://github.com/lzf575)
+* fix: Inconsistent settings and examples [#9199](https://github.com/deepflowio/deepflow/pull/9199) by [rvql](https://github.com/rvql)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
