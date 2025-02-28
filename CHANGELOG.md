@@ -8,6 +8,11 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: agent - eBPF Fix TCP DNS client request loss [#9218](https://github.com/deepflowio/deepflow/pull/9218) by [yinjiping](https://github.com/yinjiping)
+* fix: refactors resource event panic [#9217](https://github.com/deepflowio/deepflow/pull/9217) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* Fix the wrong real ip [#9209](https://github.com/deepflowio/deepflow/pull/9209) by [yuanchaoa](https://github.com/yuanchaoa)
+* fix: embed sub template [#9208](https://github.com/deepflowio/deepflow/pull/9208) by [taloric](https://github.com/taloric)
+* fix: load yaml key case sensitive [#9204](https://github.com/deepflowio/deepflow/pull/9204) by [askyrie](https://github.com/askyrie)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +40,7 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: verify node internal address [#9213](https://github.com/deepflowio/deepflow/pull/9213) by [askyrie](https://github.com/askyrie)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
