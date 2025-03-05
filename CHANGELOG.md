@@ -8,6 +8,7 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: check device icon error [#9244](https://github.com/deepflowio/deepflow/pull/9244) by [xiaochaoren1](https://github.com/xiaochaoren1)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +36,9 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: prioritize matching services that don't have ports [#9248](https://github.com/deepflowio/deepflow/pull/9248) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* feat: supports deduplication of custom service ip when sending to ingester [#9242](https://github.com/deepflowio/deepflow/pull/9242) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* feat: custom service message interface changes [#9241](https://github.com/deepflowio/deepflow/pull/9241) by [lzf575](https://github.com/lzf575)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -70,3 +74,7 @@
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
+
+
+#### OTHER
+* doc: update enable description [#9246](https://github.com/deepflowio/deepflow/pull/9246) by [taloric](https://github.com/taloric)
