@@ -35,6 +35,7 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: querier remove auto ip columns [#9405](https://github.com/deepflowio/deepflow/pull/9405) by [xiaochaoren1](https://github.com/xiaochaoren1)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -65,8 +66,9 @@
 
 
 #### Documentation
+* docs: update process_matcher config example /2 [#9410](https://github.com/deepflowio/deepflow/pull/9410) by [sharang](https://github.com/sharang)
+* docs: update process_matcher config example [#9409](https://github.com/deepflowio/deepflow/pull/9409) by [sharang](https://github.com/sharang)
 * docs: rename opentemetry to opentelemetry [#7245](https://github.com/deepflowio/deepflow/pull/7245) by [lzf575](https://github.com/lzf575)
-
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
