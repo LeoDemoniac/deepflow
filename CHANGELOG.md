@@ -8,6 +8,7 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* chore: fix typos in multiple files [#9283](https://github.com/deepflowio/deepflow/pull/9283) by [co63oc](https://github.com/co63oc)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +36,10 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: agent - eBPF Output whitlelist/blacklist to log [#9422](https://github.com/deepflowio/deepflow/pull/9422) by [yinjiping](https://github.com/yinjiping)
+* feat: Add strace command [#9419](https://github.com/deepflowio/deepflow/pull/9419) by [rvql](https://github.com/rvql)
+* feat: support v8 sw [#9416](https://github.com/deepflowio/deepflow/pull/9416) by [taloric](https://github.com/taloric)
+* feat: update trisolaris agent func [#9403](https://github.com/deepflowio/deepflow/pull/9403) by [askyrie](https://github.com/askyrie)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -65,8 +70,8 @@
 
 
 #### Documentation
+* docs: update process_matcher configuration documents [#9415](https://github.com/deepflowio/deepflow/pull/9415) by [sharang](https://github.com/sharang)
 * docs: rename opentemetry to opentelemetry [#7245](https://github.com/deepflowio/deepflow/pull/7245) by [lzf575](https://github.com/lzf575)
-
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
