@@ -8,6 +8,10 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: auto group slimit error [#9641](https://github.com/deepflowio/deepflow/pull/9641) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* fix: close ckwriter cause panic [#9640](https://github.com/deepflowio/deepflow/pull/9640) by [lzf575](https://github.com/lzf575)
+* fix: owner vtap no license func [#9637](https://github.com/deepflowio/deepflow/pull/9637) by [askyrie](https://github.com/askyrie)
+* fix: modify metrics calculation logic [#9628](https://github.com/deepflowio/deepflow/pull/9628) by [xiaochaoren1](https://github.com/xiaochaoren1)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
