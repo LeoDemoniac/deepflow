@@ -65,8 +65,8 @@
 
 
 #### Documentation
+* docs: modify the name of the flow log compression [#9663](https://github.com/deepflowio/deepflow/pull/9663) by [lzf575](https://github.com/lzf575)
 * docs: rename opentemetry to opentelemetry [#7245](https://github.com/deepflowio/deepflow/pull/7245) by [lzf575](https://github.com/lzf575)
-
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
