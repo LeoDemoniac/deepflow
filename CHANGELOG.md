@@ -35,6 +35,10 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: support change datasource listen port [#9874](https://github.com/deepflowio/deepflow/pull/9874) by [lzf575](https://github.com/lzf575)
+* feat: agent - Split protocol inference eBPF program using tail calls [#9872](https://github.com/deepflowio/deepflow/pull/9872) by [yinjiping](https://github.com/yinjiping)
+* feat: agent - eBPF Add DPDK packet capture configuration instructions [#9841](https://github.com/deepflowio/deepflow/pull/9841) by [yinjiping](https://github.com/yinjiping)
+* feat: kernel version check [#9831](https://github.com/deepflowio/deepflow/pull/9831) by [lzf575](https://github.com/lzf575)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
