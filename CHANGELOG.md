@@ -8,6 +8,9 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: Multi ns packet capture and socket sync [#9955](https://github.com/deepflowio/deepflow/pull/9955) by [rvql](https://github.com/rvql)
+* fix: matching service, no VPC verification first [#9950](https://github.com/deepflowio/deepflow/pull/9950) by [lzf575](https://github.com/lzf575)
+* fix: incorrect l7 ebpf packet size [#9945](https://github.com/deepflowio/deepflow/pull/9945) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
