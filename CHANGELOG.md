@@ -8,6 +8,9 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: Opensource arm64 compile [#10145](https://github.com/deepflowio/deepflow/pull/10145) by [rvql](https://github.com/rvql)
+* fix: select not exist field in vinterface table [#10140](https://github.com/deepflowio/deepflow/pull/10140) by [SongZhen0704](https://github.com/SongZhen0704)
+* fix: incorrect handshaking rtt [#10139](https://github.com/deepflowio/deepflow/pull/10139) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
