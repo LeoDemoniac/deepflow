@@ -8,6 +8,8 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: auto inject host_ip for vector [#10187](https://github.com/deepflowio/deepflow/pull/10187) by [taloric](https://github.com/taloric)
+* fix: tencent subnet [#10186](https://github.com/deepflowio/deepflow/pull/10186) by [askyrie](https://github.com/askyrie)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -65,8 +67,8 @@
 
 
 #### Documentation
+* docs: use https for kubelet metrics [#10193](https://github.com/deepflowio/deepflow/pull/10193) by [taloric](https://github.com/taloric)
 * docs: rename opentemetry to opentelemetry [#7245](https://github.com/deepflowio/deepflow/pull/7245) by [lzf575](https://github.com/lzf575)
-
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
