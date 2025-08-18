@@ -8,6 +8,10 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: Flush cached stats when flow ends [#10313](https://github.com/deepflowio/deepflow/pull/10313) by [rvql](https://github.com/rvql)
+* fix: incorrect http2 log [#10310](https://github.com/deepflowio/deepflow/pull/10310) by [yuanchaoa](https://github.com/yuanchaoa)
+* fix: Support k8s ingress prior to 1.22 [#10309](https://github.com/deepflowio/deepflow/pull/10309) by [rvql](https://github.com/rvql)
+* fix: stores wrong updated_at value of recreated resouce [#10308](https://github.com/deepflowio/deepflow/pull/10308) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
