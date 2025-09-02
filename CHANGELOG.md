@@ -8,6 +8,10 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: disk io log level from warn to debug [#10381](https://github.com/deepflowio/deepflow/pull/10381) by [yuanchaoa](https://github.com/yuanchaoa)
+* fix: test-server support set grpc-buffer-size [#10376](https://github.com/deepflowio/deepflow/pull/10376) by [yuanchaoa](https://github.com/yuanchaoa)
+* fix: update auto_service/instance when gpid from process_id [#10372](https://github.com/deepflowio/deepflow/pull/10372) by [lzf575](https://github.com/lzf575)
+* fix: agent - eBPF Fix CPU affinity interference from numad for agent [#10370](https://github.com/deepflowio/deepflow/pull/10370) by [yinjiping](https://github.com/yinjiping)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +39,8 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: perf_event table change to file_event [#10365](https://github.com/deepflowio/deepflow/pull/10365) by [lzf575](https://github.com/lzf575)
+* feat: auto grpc buffer size [#10348](https://github.com/deepflowio/deepflow/pull/10348) by [askyrie](https://github.com/askyrie)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
