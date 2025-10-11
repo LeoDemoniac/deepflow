@@ -8,6 +8,13 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: eBPF Resolve ARM static compilation [#10585](https://github.com/deepflowio/deepflow/pull/10585) by [yinjiping](https://github.com/yinjiping)
+* fix: for local IP data, tag it with Agent information [#10575](https://github.com/deepflowio/deepflow/pull/10575) by [lzf575](https://github.com/lzf575)
+* fix: agent - eBPF Adjust the display of the file directory (#10551) [#10572](https://github.com/deepflowio/deepflow/pull/10572) by [yinjiping](https://github.com/yinjiping)
+* Fix ai-devel.yaml to compatibly support fork and local pr [#10571](https://github.com/deepflowio/deepflow/pull/10571) by [kylewanginchina](https://github.com/kylewanginchina)
+* fix: agent - eBPF Fix the issue of failed loading on Linux kernel 4.1… [#10566](https://github.com/deepflowio/deepflow/pull/10566) by [yinjiping](https://github.com/yinjiping)
+* fix: add wespheremq/iso8583 l7 perf stats [#10563](https://github.com/deepflowio/deepflow/pull/10563) by [lzf575](https://github.com/lzf575)
+* fix: fix bug in agent exec command [#10560](https://github.com/deepflowio/deepflow/pull/10560) by [SongZhen0704](https://github.com/SongZhen0704)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +42,9 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: genesis table add index [#10576](https://github.com/deepflowio/deepflow/pull/10576) by [askyrie](https://github.com/askyrie)
+* feat: modify the display name of the file_event table [#10568](https://github.com/deepflowio/deepflow/pull/10568) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: OTel adds parsing attribute network.peer.address [#10567](https://github.com/deepflowio/deepflow/pull/10567) by [lzf575](https://github.com/lzf575)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
