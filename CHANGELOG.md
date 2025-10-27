@@ -8,6 +8,9 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: enterprise compile failed [#10664](https://github.com/deepflowio/deepflow/pull/10664) by [lzf575](https://github.com/lzf575)
+* fix: misremove tracetree trace_id_2 [#10661](https://github.com/deepflowio/deepflow/pull/10661) by [taloric](https://github.com/taloric)
+* fix: allow fuzzy search in payload [#10653](https://github.com/deepflowio/deepflow/pull/10653) by [taloric](https://github.com/taloric)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +38,10 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: app log add trace id,span id [#10662](https://github.com/deepflowio/deepflow/pull/10662) by [lzf575](https://github.com/lzf575)
+* feat: attribute web.vitals.xxx as OTel metrics [#10660](https://github.com/deepflowio/deepflow/pull/10660) by [lzf575](https://github.com/lzf575)
+* feat: add uid for dedup metrics in trace tree [#10648](https://github.com/deepflowio/deepflow/pull/10648) by [taloric](https://github.com/taloric)
+* feat: support multiple trace_ids [#10646](https://github.com/deepflowio/deepflow/pull/10646) by [lzf575](https://github.com/lzf575)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
