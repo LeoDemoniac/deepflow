@@ -35,6 +35,9 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: eBPF Modify the method of marking the close event [#10774](https://github.com/deepflowio/deepflow/pull/10774) by [yinjiping](https://github.com/yinjiping)
+* feat: querier supports group trace_id [#10771](https://github.com/deepflowio/deepflow/pull/10771) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: Support SqlInsertionColumn extraction [#10768](https://github.com/deepflowio/deepflow/pull/10768) by [rvql](https://github.com/rvql)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
