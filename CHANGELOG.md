@@ -35,6 +35,8 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: querier modify biz_type category [#10784](https://github.com/deepflowio/deepflow/pull/10784) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: support extra infos from l7_log for tracemap [#10773](https://github.com/deepflowio/deepflow/pull/10773) by [taloric](https://github.com/taloric)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -69,4 +71,5 @@
 
 
 #### Chore
+* chore: move iso8583 to rpc/iso8583 [#10787](https://github.com/deepflowio/deepflow/pull/10787) by [lzf575](https://github.com/lzf575)
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
