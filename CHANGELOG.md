@@ -35,6 +35,9 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: tagrecorder deduplicates key [#10879](https://github.com/deepflowio/deepflow/pull/10879) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: add kernel check for ebpf meltdown [#10874](https://github.com/deepflowio/deepflow/pull/10874) by [lzf575](https://github.com/lzf575)
+* feat: querier supports custom biz service [#10865](https://github.com/deepflowio/deepflow/pull/10865) by [xiaochaoren1](https://github.com/xiaochaoren1)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
