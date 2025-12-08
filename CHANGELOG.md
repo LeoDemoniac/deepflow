@@ -65,8 +65,8 @@
 
 
 #### Documentation
+* docs: Update custom field policy configs [#10814](https://github.com/deepflowio/deepflow/pull/10814) by [rvql](https://github.com/rvql)
 * docs: rename opentemetry to opentelemetry [#7245](https://github.com/deepflowio/deepflow/pull/7245) by [lzf575](https://github.com/lzf575)
-
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
