@@ -8,6 +8,9 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: update domain param [#10978](https://github.com/deepflowio/deepflow/pull/10978) by [askyrie](https://github.com/askyrie)
+* fix: remove region learning in recorder [#10975](https://github.com/deepflowio/deepflow/pull/10975) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* Fix python and dwarf unwind for vllm profiling [#10974](https://github.com/deepflowio/deepflow/pull/10974) by [kylewanginchina](https://github.com/kylewanginchina)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +38,8 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: Support native tag endpoint in compound fields [#10971](https://github.com/deepflowio/deepflow/pull/10971) by [rvql](https://github.com/rvql)
+* feat: add ooo_count to flow log [#10964](https://github.com/deepflowio/deepflow/pull/10964) by [yuanchaoa](https://github.com/yuanchaoa)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -65,8 +70,8 @@
 
 
 #### Documentation
+* docs: Add docs for L7Log derive [#10980](https://github.com/deepflowio/deepflow/pull/10980) by [rvql](https://github.com/rvql)
 * docs: rename opentemetry to opentelemetry [#7245](https://github.com/deepflowio/deepflow/pull/7245) by [lzf575](https://github.com/lzf575)
-
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
