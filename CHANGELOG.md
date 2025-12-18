@@ -8,6 +8,9 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: Avoid warning message when replacing custom_field_policies [#11035](https://github.com/deepflowio/deepflow/pull/11035) by [rvql](https://github.com/rvql)
+* fix: incorrect fin count [#11032](https://github.com/deepflowio/deepflow/pull/11032) by [yuanchaoa](https://github.com/yuanchaoa)
+* fix: ignore start_continuous_profiler error [#11021](https://github.com/deepflowio/deepflow/pull/11021) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +38,10 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: querier alert_event support tag_string [#11029](https://github.com/deepflowio/deepflow/pull/11029) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: support multi vpcs/pod_clusters in biz service [#11020](https://github.com/deepflowio/deepflow/pull/11020) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* feat: querier alert_event supports topk_endpoints [#11017](https://github.com/deepflowio/deepflow/pull/11017) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: add is_reversed to l7 info [#11012](https://github.com/deepflowio/deepflow/pull/11012) by [yuanchaoa](https://github.com/yuanchaoa)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -56,7 +63,7 @@
 * feat: server directly reports metrics of load1_by_cpu_num that can be used for alert [#7088](https://github.com/deepflowio/deepflow/pull/7088) by [lzf575](https://github.com/lzf575)
 
 #### Refactoring
-
+* refactor: optimize performance for rocketmq parsing further [#11004](https://github.com/deepflowio/deepflow/pull/11004) by [kylewanginchina](https://github.com/kylewanginchina)
 * refactor: Change crate name [#7155](https://github.com/deepflowio/deepflow/pull/7155) by [rvql](https://github.com/rvql)
 
 #### Performance
