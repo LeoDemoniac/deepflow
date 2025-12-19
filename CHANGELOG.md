@@ -8,6 +8,9 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: modify the position of the ooo metrics [#11048](https://github.com/deepflowio/deepflow/pull/11048) by [yuanchaoa](https://github.com/yuanchaoa)
+* fix: issue of unable to obtain control IP + MAC [#11039](https://github.com/deepflowio/deepflow/pull/11039) by [yuanchaoa](https://github.com/yuanchaoa)
+* fix: Windows compile error [#11038](https://github.com/deepflowio/deepflow/pull/11038) by [rvql](https://github.com/rvql)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +38,10 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: add ooo_tx/rx fin_count fields [#11053](https://github.com/deepflowio/deepflow/pull/11053) by [lzf575](https://github.com/lzf575)
+* feat: cloud default region name [#11052](https://github.com/deepflowio/deepflow/pull/11052) by [askyrie](https://github.com/askyrie)
+* feat: cloud exception add timestamp [#11051](https://github.com/deepflowio/deepflow/pull/11051) by [askyrie](https://github.com/askyrie)
+* feat: querier add ooo metric [#10989](https://github.com/deepflowio/deepflow/pull/10989) by [xiaochaoren1](https://github.com/xiaochaoren1)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -69,4 +76,5 @@
 
 
 #### Chore
+* chore: need to be built on Windows [#11040](https://github.com/deepflowio/deepflow/pull/11040) by [lzf575](https://github.com/lzf575)
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
