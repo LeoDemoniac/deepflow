@@ -8,6 +8,11 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: Order of wasm fields and custom policy fields [#11146](https://github.com/deepflowio/deepflow/pull/11146) by [rvql](https://github.com/rvql)
+* fix: db migration issu error [#11145](https://github.com/deepflowio/deepflow/pull/11145) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* fix: fix typo [#11143](https://github.com/deepflowio/deepflow/pull/11143) by [taloric](https://github.com/taloric)
+* fix: querier topk enum app_service error [#11141](https://github.com/deepflowio/deepflow/pull/11141) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* fix: pod_service/pod_group ddl error [#11139](https://github.com/deepflowio/deepflow/pull/11139) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +40,7 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: update message version [#11135](https://github.com/deepflowio/deepflow/pull/11135) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -56,7 +62,7 @@
 * feat: server directly reports metrics of load1_by_cpu_num that can be used for alert [#7088](https://github.com/deepflowio/deepflow/pull/7088) by [lzf575](https://github.com/lzf575)
 
 #### Refactoring
-
+* refactor: support output failed log of ebpf loading and degrade into profiler-common when profiler-5.2_plus load failed [#11082](https://github.com/deepflowio/deepflow/pull/11082) by [kylewanginchina](https://github.com/kylewanginchina)
 * refactor: Change crate name [#7155](https://github.com/deepflowio/deepflow/pull/7155) by [rvql](https://github.com/rvql)
 
 #### Performance
@@ -65,8 +71,8 @@
 
 
 #### Documentation
+* docs: Revise compound_fields description [#11136](https://github.com/deepflowio/deepflow/pull/11136) by [rvql](https://github.com/rvql)
 * docs: rename opentemetry to opentelemetry [#7245](https://github.com/deepflowio/deepflow/pull/7245) by [lzf575](https://github.com/lzf575)
-
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
