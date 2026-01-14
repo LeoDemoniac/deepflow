@@ -8,6 +8,8 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: Avoid recompiling ebpf [#11233](https://github.com/deepflowio/deepflow/pull/11233) by [rvql](https://github.com/rvql)
+* fix: diff custom app config cache [#11225](https://github.com/deepflowio/deepflow/pull/11225) by [askyrie](https://github.com/askyrie)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +37,10 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: agent eBPF ignore deepflow_ebpfctl_bin.c [#11227](https://github.com/deepflowio/deepflow/pull/11227) by [yinjiping](https://github.com/yinjiping)
+* feat: add biz decode spec [#11220](https://github.com/deepflowio/deepflow/pull/11220) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* feat: controller add pcap repo config [#11208](https://github.com/deepflowio/deepflow/pull/11208) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: Change configuration of custom application policies [#11207](https://github.com/deepflowio/deepflow/pull/11207) by [rvql](https://github.com/rvql)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -69,4 +75,5 @@
 
 
 #### Chore
+* chore: modify the Chinese translation of "response" [#11231](https://github.com/deepflowio/deepflow/pull/11231) by [lzf575](https://github.com/lzf575)
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
