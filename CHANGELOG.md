@@ -35,6 +35,9 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: add some configuration [#11264](https://github.com/deepflowio/deepflow/pull/11264) by [SongZhen0704](https://github.com/SongZhen0704)
+* feat: migrate biz service team id [#11257](https://github.com/deepflowio/deepflow/pull/11257) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* feat: Add l7 protocol check to biz procotol inference [#11252](https://github.com/deepflowio/deepflow/pull/11252) by [rvql](https://github.com/rvql)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -65,8 +68,10 @@
 
 
 #### Documentation
+* docs: update dubbo header extract description [#11261](https://github.com/deepflowio/deepflow/pull/11261) by [taloric](https://github.com/taloric)
+* docs: Update custom_app schema [#11260](https://github.com/deepflowio/deepflow/pull/11260) by [rvql](https://github.com/rvql)
+* docs: Update custom app schema [#11259](https://github.com/deepflowio/deepflow/pull/11259) by [rvql](https://github.com/rvql)
 * docs: rename opentemetry to opentelemetry [#7245](https://github.com/deepflowio/deepflow/pull/7245) by [lzf575](https://github.com/lzf575)
-
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
