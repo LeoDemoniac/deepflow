@@ -8,6 +8,8 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: query custom service without port should ignore protocol [#11305](https://github.com/deepflowio/deepflow/pull/11305) by [lzf575](https://github.com/lzf575)
+* fix: matching custom service without port should ignore protocol [#11304](https://github.com/deepflowio/deepflow/pull/11304) by [lzf575](https://github.com/lzf575)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
