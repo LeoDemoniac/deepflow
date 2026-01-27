@@ -8,6 +8,9 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: windows/android querier keeps appending raw ip addr [#11318](https://github.com/deepflowio/deepflow/pull/11318) by [rvql](https://github.com/rvql)
+* fix: make merge_php_stacks compatible for some special cases [#11310](https://github.com/deepflowio/deepflow/pull/11310) by [kylewanginchina](https://github.com/kylewanginchina)
+* fix: make merge_v8_stacks compatible for some special cases [#11290](https://github.com/deepflowio/deepflow/pull/11290) by [kylewanginchina](https://github.com/kylewanginchina)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +38,11 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: app log support string metrics [#11320](https://github.com/deepflowio/deepflow/pull/11320) by [lzf575](https://github.com/lzf575)
+* feat: modify pgsql algo logic [#11316](https://github.com/deepflowio/deepflow/pull/11316) by [yuanchaoa](https://github.com/yuanchaoa)
+* feat: add observation_point for tracetree [#11314](https://github.com/deepflowio/deepflow/pull/11314) by [taloric](https://github.com/taloric)
+* feat: add biz_response_code [#11307](https://github.com/deepflowio/deepflow/pull/11307) by [lzf575](https://github.com/lzf575)
+* feat: support off-cpu profile for php and nodejs/v8 [#11287](https://github.com/deepflowio/deepflow/pull/11287) by [kylewanginchina](https://github.com/kylewanginchina)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -56,7 +64,7 @@
 * feat: server directly reports metrics of load1_by_cpu_num that can be used for alert [#7088](https://github.com/deepflowio/deepflow/pull/7088) by [lzf575](https://github.com/lzf575)
 
 #### Refactoring
-
+* refactor: migrate python/lua/php/nodejs unwind code into ee [#11179](https://github.com/deepflowio/deepflow/pull/11179) by [kylewanginchina](https://github.com/kylewanginchina)
 * refactor: Change crate name [#7155](https://github.com/deepflowio/deepflow/pull/7155) by [rvql](https://github.com/rvql)
 
 #### Performance
@@ -69,4 +77,5 @@
 
 
 #### Chore
+* chore: default value of parse xml set to true [#11313](https://github.com/deepflowio/deepflow/pull/11313) by [lzf575](https://github.com/lzf575)
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
