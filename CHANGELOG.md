@@ -8,6 +8,7 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: unable to obtain the ctrl ip mac [#11382](https://github.com/deepflowio/deepflow/pull/11382) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +36,10 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: refactor recorder cache tool [#11389](https://github.com/deepflowio/deepflow/pull/11389) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* feat: add alarm policy dynamic label [#11371](https://github.com/deepflowio/deepflow/pull/11371) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: refactor recorder updater [#11363](https://github.com/deepflowio/deepflow/pull/11363) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* feat: add TPBASE and TSD extraction for multi-thread Python unwind [#11335](https://github.com/deepflowio/deepflow/pull/11335) by [kylewanginchina](https://github.com/kylewanginchina)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -56,7 +61,7 @@
 * feat: server directly reports metrics of load1_by_cpu_num that can be used for alert [#7088](https://github.com/deepflowio/deepflow/pull/7088) by [lzf575](https://github.com/lzf575)
 
 #### Refactoring
-
+* refactor: Remove redundant timestamp unit conversion [#11390](https://github.com/deepflowio/deepflow/pull/11390) by [rvql](https://github.com/rvql)
 * refactor: Change crate name [#7155](https://github.com/deepflowio/deepflow/pull/7155) by [rvql](https://github.com/rvql)
 
 #### Performance
@@ -70,3 +75,7 @@
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
+
+
+#### Testing
+* Update ai-devel.yaml for latest claude-code-action use [#11388](https://github.com/deepflowio/deepflow/pull/11388) by [kylewanginchina](https://github.com/kylewanginchina)
