@@ -8,6 +8,9 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: agent_group_config list command error [#11412](https://github.com/deepflowio/deepflow/pull/11412) by [SongZhen0704](https://github.com/SongZhen0704)
+* fix: querier chost_ip filter error [#11409](https://github.com/deepflowio/deepflow/pull/11409) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* fix: handle extra_filters with correct seq [#11408](https://github.com/deepflowio/deepflow/pull/11408) by [taloric](https://github.com/taloric)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
