@@ -65,8 +65,8 @@
 
 
 #### Documentation
+* docs: Revise description on inputs.proc.socket_info_sync_interval [#11426](https://github.com/deepflowio/deepflow/pull/11426) by [rvql](https://github.com/rvql)
 * docs: rename opentemetry to opentelemetry [#7245](https://github.com/deepflowio/deepflow/pull/7245) by [lzf575](https://github.com/lzf575)
-
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
