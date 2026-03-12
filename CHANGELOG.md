@@ -70,3 +70,7 @@
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
+
+
+#### OTHER
+* Update ai-devel.yaml [#11457](https://github.com/deepflowio/deepflow/pull/11457) by [kylewanginchina](https://github.com/kylewanginchina)
