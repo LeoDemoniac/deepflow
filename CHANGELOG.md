@@ -35,6 +35,9 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: log container resource limit changes before agent restart [#11462](https://github.com/deepflowio/deepflow/pull/11462) by [rvql](https://github.com/rvql)
+* feat: update cloud genesis default az name [#11460](https://github.com/deepflowio/deepflow/pull/11460) by [askyrie](https://github.com/askyrie)
+* feat: stats counter now skips nil values [#11459](https://github.com/deepflowio/deepflow/pull/11459) by [lzf575](https://github.com/lzf575)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -70,3 +73,7 @@
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
+
+
+#### Testing
+* chore: Move test cases [#11461](https://github.com/deepflowio/deepflow/pull/11461) by [rvql](https://github.com/rvql)
