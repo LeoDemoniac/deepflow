@@ -8,6 +8,9 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: incorrect server port [#11475](https://github.com/deepflowio/deepflow/pull/11475) by [yuanchaoa](https://github.com/yuanchaoa)
+* fix: trace node success count error [#11474](https://github.com/deepflowio/deepflow/pull/11474) by [taloric](https://github.com/taloric)
+* fix: ISO-8583 exception return code 96 A0 30 [#11472](https://github.com/deepflowio/deepflow/pull/11472) by [lzf575](https://github.com/lzf575)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -65,8 +68,8 @@
 
 
 #### Documentation
+* docs: update description in schema [#11471](https://github.com/deepflowio/deepflow/pull/11471) by [rvql](https://github.com/rvql)
 * docs: rename opentemetry to opentelemetry [#7245](https://github.com/deepflowio/deepflow/pull/7245) by [lzf575](https://github.com/lzf575)
-
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
