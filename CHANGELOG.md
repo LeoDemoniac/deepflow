@@ -8,6 +8,11 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* Fix dubbo heart msg [#11499](https://github.com/deepflowio/deepflow/pull/11499) by [yuanchaoa](https://github.com/yuanchaoa)
+* fix: rng errors [#11498](https://github.com/deepflowio/deepflow/pull/11498) by [yuanchaoa](https://github.com/yuanchaoa)
+* fix: missing vinterface [#11496](https://github.com/deepflowio/deepflow/pull/11496) by [askyrie](https://github.com/askyrie)
+* fix: validate xdp_queue_size in NIC apply path [#11494](https://github.com/deepflowio/deepflow/pull/11494) by [yinjiping](https://github.com/yinjiping)
+* fix: fix lua unwind in some cases [#11399](https://github.com/deepflowio/deepflow/pull/11399) by [qlndzt](https://github.com/qlndzt)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +40,7 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: Add Java classpath process matcher [#11497](https://github.com/deepflowio/deepflow/pull/11497) by [rvql](https://github.com/rvql)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
