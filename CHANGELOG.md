@@ -35,6 +35,11 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: querier support alert state [#11508](https://github.com/deepflowio/deepflow/pull/11508) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: modify metric value displayname [#11507](https://github.com/deepflowio/deepflow/pull/11507) by [xiaochaoren1](https://github.com/xiaochaoren1)
+* feat: update default port name regex [#11506](https://github.com/deepflowio/deepflow/pull/11506) by [askyrie](https://github.com/askyrie)
+* feat: custom policy and field disabled [#11504](https://github.com/deepflowio/deepflow/pull/11504) by [askyrie](https://github.com/askyrie)
+* feat: add enabled flag to custom app policies and fields [#11503](https://github.com/deepflowio/deepflow/pull/11503) by [rvql](https://github.com/rvql)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
