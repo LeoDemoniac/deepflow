@@ -8,6 +8,8 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix: Adjust TCP RTT algorithm [#11559](https://github.com/deepflowio/deepflow/pull/11559) by [yuanchaoa](https://github.com/yuanchaoa)
+* fix: delete genesis k8s cache [#11550](https://github.com/deepflowio/deepflow/pull/11550) by [askyrie](https://github.com/askyrie)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
@@ -35,6 +37,9 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: support match custom service without epc [#11552](https://github.com/deepflowio/deepflow/pull/11552) by [lzf575](https://github.com/lzf575)
+* feat: ip/port type biz service vpc is not required [#11551](https://github.com/deepflowio/deepflow/pull/11551) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
+* feat: dubbo support java format [#11546](https://github.com/deepflowio/deepflow/pull/11546) by [yuanchaoa](https://github.com/yuanchaoa)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -60,9 +65,8 @@
 * refactor: Change crate name [#7155](https://github.com/deepflowio/deepflow/pull/7155) by [rvql](https://github.com/rvql)
 
 #### Performance
-
+* perf: reduce kick thread latency with tunable SCHED_FIFO priority [#11549](https://github.com/deepflowio/deepflow/pull/11549) by [yinjiping](https://github.com/yinjiping)
 * perf: improve parsing RequestResource from http.url of OTel data [#7172](https://github.com/deepflowio/deepflow/pull/7172) by [lzf575](https://github.com/lzf575)
-
 
 #### Documentation
 * docs: rename opentemetry to opentelemetry [#7245](https://github.com/deepflowio/deepflow/pull/7245) by [lzf575](https://github.com/lzf575)
