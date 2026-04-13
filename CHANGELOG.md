@@ -35,6 +35,8 @@
 * Fix prometheus data cannot be labeled with universal tags，if slow-decoder is used. [#7100](https://github.com/deepflowio/deepflow/pull/7100)
 
 #### NEW FEATURE
+* feat: whether session aggregation is enabled for WASM. [#11612](https://github.com/deepflowio/deepflow/pull/11612) by [lzf575](https://github.com/lzf575)
+* feat: polish metadb index definition [#11603](https://github.com/deepflowio/deepflow/pull/11603) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
 * feat: agent - eBPF Add JAVA symbol file generation log [#7258](https://github.com/deepflowio/deepflow/pull/7258) by [yinjiping](https://github.com/yinjiping)
 * feat: revert - Rewriting ParseShowSql with Regular Expressions [#7252](https://github.com/deepflowio/deepflow/pull/7252) by [duandaa](https://github.com/duandaa)
 * feat: querier - Rewriting ParseShowSql with Regular Expressions [#7181](https://github.com/deepflowio/deepflow/pull/7181) by [duandaa](https://github.com/duandaa)
@@ -70,3 +72,8 @@
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
+
+
+#### OTHER
+* agent: harden watchdog parent identity checks [#11609](https://github.com/deepflowio/deepflow/pull/11609) by [rvql](https://github.com/rvql)
+* agent: add watchdog subprocess for non-k8s liveness [#11604](https://github.com/deepflowio/deepflow/pull/11604) by [rvql](https://github.com/rvql)
