@@ -8,6 +8,8 @@
 ### <a id="main"></a>DeepFlow release main
 
 #### Bug Fix
+* fix(postgres): resolve PostgreSQL compatibility issues in metadb [#11678](https://github.com/deepflowio/deepflow/pull/11678) by [mail2sudheerobbu-oss](https://github.com/mail2sudheerobbu-oss)
+* fix: incorrect endpoint [#11670](https://github.com/deepflowio/deepflow/pull/11670) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: agent - windows compilation errors [#7243](https://github.com/deepflowio/deepflow/pull/7243) by [yuanchaoa](https://github.com/yuanchaoa)
 * fix: uses long connections to connect to CK for datasources manager [#7239](https://github.com/deepflowio/deepflow/pull/7239) by [lzf575](https://github.com/lzf575)
 * fix: server recorder prints unnecessary error logs [#7190](https://github.com/deepflowio/deepflow/pull/7190) by [ZhengYa-0110](https://github.com/ZhengYa-0110)
