@@ -70,3 +70,7 @@
 
 #### Chore
 * chore: update cli dependencies [#7249](https://github.com/deepflowio/deepflow/pull/7249) by [lzf575](https://github.com/lzf575)
+
+
+#### OTHER
+* refact: Adjust fast path map size [#11893](https://github.com/deepflowio/deepflow/pull/11893) by [yuanchaoa](https://github.com/yuanchaoa)
